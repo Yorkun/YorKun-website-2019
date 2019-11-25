@@ -16,7 +16,7 @@
             }
 
             &:nth-of-type(3) {
-                ::v-deep  .img-area {
+                ::v-deep .img-area {
                     img {
                         left: 6px !important;
                     }
@@ -321,6 +321,54 @@
                     height: 600px;
 
                     .des {
+                        top: -130px;
+
+                        span {
+                            font-size: 12px;
+                            line-height: 16px;
+                            width: 90%;
+                            margin-bottom: 24px;
+                        }
+
+                        p,
+                        h1 {
+                            word-break: normal;
+
+                            z-index: 100;
+                        }
+
+                        .defaultButton {
+                            margin: 0;
+                        }
+                    }
+
+                    .img-area {
+                        width: 100%;
+                        bottom: -10px;
+
+                        img {
+                            height: 330px;
+                            position: relative;
+                            left: -91px;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            top: 0;
+                            z-index: 2;
+                            content: "";
+                            display: block;
+                            width: 120%;
+                            height: 160px;
+                            background-image: linear-gradient(bottom, rgba(245, 246, 248, 0) 0%, rgba(238, 239, 240, 1)100%);
+                        }
+                    }
+                }
+
+                &:nth-of-type(6) {
+                    height: 600px;
+
+                    .des {
                         top: -120px;
 
                         span {
@@ -339,6 +387,55 @@
                             height: 320px;
                             position: relative;
                             left: -40px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(7) {
+                    height: 660px;
+
+                    .des {
+                        top: -170px;
+
+                        span {
+                            font-size: 12px;
+                            line-height: 16px;
+                            width: 85% !important;
+                            margin-bottom: 24px;
+                        }
+
+                        p,
+                        h1 {
+                            word-break: normal;
+
+                            z-index: 100;
+                        }
+
+                        .ghostButton {
+                            position: relative;
+                            top: 80px;
+
+                            &::before {
+                                right: 23px;
+                                top: -68px;
+                            }
+                        }
+                    }
+
+                    .img-area {
+                        width: 100%;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                 
+
+                        img {
+                            position: relative;
+                            width: 95%;
+                            height: auto;
+                            bottom: 28px;
+                            margin-right: 0;
                         }
                     }
                 }

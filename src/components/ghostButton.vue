@@ -3,7 +3,11 @@
     <a :href="href" target="_blank">
       <div class="wrap">
         {{buttonText}}
-        <div id="ghostButton-icon" class="ghostButton-icon" :style="'background-image:' + 'url(' + buttonIcon +')'"></div>
+        <div
+          id="ghostButton-icon"
+          class="ghostButton-icon"
+          :style="'background-image:' + 'url(' + buttonIcon +')'"
+        ></div>
       </div>
     </a>
   </div>
@@ -38,6 +42,11 @@ export default {
   background-color: $white;
   transition: all 0.3s ease;
   @include font(14px, $font-color-black-1, 400);
+
+  &:hover {
+    filter: invert(1);
+    border-color: white;
+  }
 
   a {
     width: 100%;

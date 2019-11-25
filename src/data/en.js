@@ -24,6 +24,8 @@ import captcha_logo_en from '../assets/index/captcha_logo_en.svg';
 import wangguan_logo from '../assets/index/wangguan_logo.svg';
 import banana_logo from '../assets/index/banana_logo.svg';
 import animation from '../assets/index/animation.png';
+import yoke_logo from '../assets/yoke_logo.svg';
+import yoke_banner from '../assets/yoke_banner.png';
 
 export default [
   {
@@ -95,5 +97,28 @@ export default [
     isTag: true,
     bgImg: app_onelogin,
     hrefD: '/onelogin',
+  },
+  {
+    title: 'APP 一键登录',
+    cardLogo: yoke_logo,
+    des:
+      'According to my work habits, I designed a quick search tool for designers, you can search multiple websites at the same time.',
+    cardColor: '#EEEFF0',
+    tag: 'App UI Design',
+    buttonTextD: '',
+    buttonTextG: 'See the live',
+    isTagWhite: false,
+    tagColor: 'rgba(0,0,0,0.08)',
+    isButton: false,
+    btnIconD: '',
+    btnIconG: link_icon_b,
+    isGhostButton: true,
+    isTitle: true,
+    isDes: true,
+    isBlack: false,
+    isWhiteBotton: false,
+    isTag: true,
+    bgImg: yoke_banner,
+    hrefG: 'https://yoke.now.sh',
   },
 ];

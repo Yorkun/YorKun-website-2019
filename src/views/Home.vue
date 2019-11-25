@@ -123,6 +123,30 @@
         :hrefG="cnBanana.hrefG"
         id="banana"
       />
+      <card
+        :title="character.en.title"
+        :cardLogo="character.en.cardLogo"
+        :des="character.en.des"
+        :cardColor="character.en.cardColor"
+        :tag="character.en.tag"
+        :isTagWhite="character.en.isTagWhite"
+        :tagColor="character.en.tagColor"
+        :isTitle="character.en.isTitle"
+        :isButton="character.en.isButton"
+        :isDes="character.en.isDes"
+        :isBlack="character.en.isBlack"
+        :isWhiteBotton="character.en.isWhiteBotton"
+        :isTag="character.en.isTag"
+        :bgImg="character.en.bgImg"
+        :isGhostButton="character.en.isGhostButton"
+        :btnIconD="character.en.btnIconD"
+        :btnIconG="character.en.btnIconG"
+        :buttonTextD="character.en.buttonTextD"
+        :buttonTextG="character.en.buttonTextG"
+        :hrefD="character.en.hrefD"
+        :hrefG="character.en.hrefG"
+        id="character"
+      />
       <span id="works"></span>
 
       <div class="smallCards">
@@ -208,37 +232,40 @@
 </template>
 
 <script>
-import defaultButton from "../components/defaultButton.vue";
-import ghostButton from "../components/ghostButton.vue";
-import card from "../components/card.vue";
-import motionCard from "../components/motionCard.vue";
-import smallCard from "../components/smallCard.vue";
-import xsCard from "../components/xsCard.vue";
-import globalFooter from "../components/globalFooter.vue";
-import top from "../components/top.vue";
-import link from "../assets/index/button-icon/link_icon.svg";
-import geetestweb from "../assets/index/geetestweb.png";
-import ui_captcha from "../assets/index/ui_captcha.gif";
-import app_onelogin from "../assets/index/app_onelogin.png";
-import Portrait from "../assets/index/IMG_3045.png";
-import link_icon_b from "../assets/index/link_icon_b.svg";
-import geetestweb_logo from "../assets/index/geetestweb_logo.svg";
-import captcha_logo from "../assets/index/captcha_logo.svg";
-import wangguan_logo from "../assets/index/wangguan_logo.svg";
-import cnDate from "../data/cn.js";
-import enDate from "../data/en.js";
-import info from "../data/info.js";
-import nav from "../data/nav.js";
-import meDes from "../data/cardMe.js";
-import banana from "../data/banana.js";
-import smallCardData from "../data/smallCard.js";
-import motionCardData from "../data/motionCard.js";
-import xsCardData from "../data/xsCard.js";
-import footerTextData from "../data/footerText.js";
+import defaultButton from '../components/defaultButton.vue';
+import ghostButton from '../components/ghostButton.vue';
+import card from '../components/card.vue';
+import motionCard from '../components/motionCard.vue';
+import smallCard from '../components/smallCard.vue';
+import xsCard from '../components/xsCard.vue';
+import globalFooter from '../components/globalFooter.vue';
+import top from '../components/top.vue';
+import link from '../assets/index/button-icon/link_icon.svg';
+import geetestweb from '../assets/index/geetestweb.png';
+import ui_captcha from '../assets/index/ui_captcha.gif';
+import app_onelogin from '../assets/index/app_onelogin.png';
+import Portrait from '../assets/index/IMG_3045.png';
+import link_icon_b from '../assets/index/link_icon_b.svg';
+import geetestweb_logo from '../assets/index/geetestweb_logo.svg';
+import captcha_logo from '../assets/index/captcha_logo.svg';
+import wangguan_logo from '../assets/index/wangguan_logo.svg';
+import cnDate from '../data/cn.js';
+import enDate from '../data/en.js';
+import info from '../data/info.js';
+import nav from '../data/nav.js';
+import meDes from '../data/cardMe.js';
+import banana from '../data/banana.js';
+import smallCardData from '../data/smallCard.js';
+import motionCardData from '../data/motionCard.js';
+import xsCardData from '../data/xsCard.js';
+import footerTextData from '../data/footerText.js';
+import character_banner from '../assets/character_banner.png';
+import character_logo from '../assets/character_logo.svg';
+import sketchFigma_icon from '../assets/sketchFigma_icon.png';
 
 export default {
-  name: "home",
-  props: ["buttonIcon"],
+  name: 'home',
+  props: ['buttonIcon'],
   components: {
     defaultButton,
     ghostButton,
@@ -247,7 +274,7 @@ export default {
     smallCard,
     xsCard,
     globalFooter,
-    top
+    top,
   },
   methods: {
     langSwitch() {
@@ -263,6 +290,7 @@ export default {
         this.cnMotionCardData = this.motionCardData.en;
         this.cnXsCardData = this.xsCardData.en;
         this.cnFooterLinkText = this.footerTextData.en;
+        this.character.en = this.characterData;
         this.isEn = true;
       }
 
@@ -276,9 +304,10 @@ export default {
         this.cnMotionCardData = motionCardData.cn;
         this.cnXsCardData = this.xsCardData.cn;
         this.cnFooterLinkText = this.footerTextData.cn;
+        this.character.en = this.character.cn;
         this.isEn = false;
       }
-    }
+    },
   },
   watch: {
     screenWidth(val) {
@@ -295,59 +324,58 @@ export default {
           that.timer = false;
         }, 400);
       }
-    }
+    },
   },
   mounted() {
     this.ok = true;
     this.langSwitch();
-    const nav = document.getElementById("nav-1");
-    const mobileNav = document.getElementById("nav-2");
+    const nav = document.getElementById('nav-1');
+    const mobileNav = document.getElementById('nav-2');
     const headerOffset = nav.offsetTop + nav.offsetHeight + 20;
-    const mobileHeaderOffset =
-      mobileNav.offsetTop + mobileNav.offsetHeight + 100;
-    const project = document.getElementById("project");
-    const works = document.getElementById("works");
+    const mobileHeaderOffset = mobileNav.offsetTop + mobileNav.offsetHeight + 100;
+    const project = document.getElementById('project');
+    const works = document.getElementById('works');
 
-    window.addEventListener("scroll", e => {
+    window.addEventListener('scroll', (e) => {
       if (window.scrollY >= headerOffset) {
-        nav.classList.add("nav-move");
+        nav.classList.add('nav-move');
       } else {
-        nav.classList.remove("nav-move");
+        nav.classList.remove('nav-move');
       }
 
       if (window.scrollY >= mobileHeaderOffset) {
-        mobileNav.classList.add("nav-move", "m-nav-move");
+        mobileNav.classList.add('nav-move', 'm-nav-move');
       } else {
-        mobileNav.classList.remove("nav-move", "m-nav-move");
+        mobileNav.classList.remove('nav-move', 'm-nav-move');
       }
 
       if (window.scrollY === project.offsetTop) {
-        nav.classList.add("anchorOn");
+        nav.classList.add('anchorOn');
       } else {
-        nav.classList.remove("anchorOn");
+        nav.classList.remove('anchorOn');
       }
       if (window.scrollY === works.offsetTop) {
-        nav.classList.add("anchorOn2");
+        nav.classList.add('anchorOn2');
       } else {
-        nav.classList.remove("anchorOn2");
+        nav.classList.remove('anchorOn2');
       }
       if (window.scrollY === 3828 || window.scrollY === 3768) {
-        nav.classList.add("anchorOn3");
+        nav.classList.add('anchorOn3');
       } else {
-        nav.classList.remove("anchorOn3");
+        nav.classList.remove('anchorOn3');
       }
     });
 
     function tag(val) {
-      const tags = document.querySelectorAll(".tag");
+      const tags = document.querySelectorAll('.tag');
 
-      if (val < "600" || document.body.clientWidth < "600") {
-        [].forEach.call(tags, tag => {
-          tag.style.display = "none";
+      if (val < '600' || document.body.clientWidth < '600') {
+        [].forEach.call(tags, (tag) => {
+          tag.style.display = 'none';
         });
       } else {
-        [].forEach.call(tags, tag => {
-          tag.style.display = "block";
+        [].forEach.call(tags, (tag) => {
+          tag.style.display = 'block';
         });
       }
     }
@@ -355,16 +383,86 @@ export default {
     tag();
 
     const that = this;
-    window.onresize = () =>
-      (() => {
-        window.screenWidth = document.body.clientWidth;
-        that.screenWidth = window.screenWidth;
+    window.onresize = () => (() => {
+      window.screenWidth = document.body.clientWidth;
+      that.screenWidth = window.screenWidth;
 
-        tag(that.screenWidth);
-      })();
+      tag(that.screenWidth);
+    })();
   },
   data() {
     return {
+      characterData: {
+        title: '小蕉 BANANA',
+        cardLogo: character_logo,
+        des:
+          'Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 450 coolest objects!',
+        cardColor: ' #F5F6F8',
+        tag: 'Cartoon Design',
+        buttonTextD: '',
+        buttonTextG: 'Coming soon',
+        isTagWhite: true,
+        tagColor: 'rgba(0,0,0,0.08)',
+        isButton: false,
+        btnIconD: '',
+        btnIconG: '',
+        isGhostButton: true,
+        isTitle: true,
+        isDes: true,
+        isBlack: true,
+        isWhiteBotton: true,
+        isTag: true,
+        bgImg: character_banner,
+        hrefD: '/banana',
+      },
+      character: {
+        cn: {
+          title: '小蕉 BANANA',
+          cardLogo: character_logo,
+          des:
+            'Character Kit 是一套扁平卡通人物合集，可运用在各种设计项目中, 100 组预设形象以及超过 450 个头部/穿着部件，任意搭配！',
+          cardColor: ' #F5F6F8',
+          tag: '主题/表情设计',
+          buttonTextD: '',
+          buttonTextG: 'Coming soon',
+          isTagWhite: true,
+          tagColor: 'rgba(0,0,0,0.08)',
+          isButton: false,
+          btnIconD: '',
+          btnIconG: '',
+          isGhostButton: true,
+          isTitle: true,
+          isDes: true,
+          isBlack: true,
+          isWhiteBotton: true,
+          isTag: true,
+          bgImg: character_banner,
+          hrefD: '/banana',
+        },
+        en: {
+          title: '小蕉 BANANA',
+          cardLogo: character_logo,
+          des:
+            'Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 450 coolest objects!',
+          cardColor: ' #F5F6F8',
+          tag: 'Cartoon Design',
+          buttonTextD: '',
+          buttonTextG: 'Coming soon',
+          isTagWhite: true,
+          tagColor: 'rgba(0,0,0,0.08)',
+          isButton: false,
+          btnIconD: '',
+          btnIconG: '',
+          isGhostButton: true,
+          isTitle: true,
+          isDes: true,
+          isBlack: true,
+          isWhiteBotton: true,
+          isTag: true,
+          bgImg: character_banner,
+          hrefD: '/banana',
+        },
+      },
       screenWidth: document.body.clientWidth,
       isEn: true,
       ok: false,
@@ -388,27 +486,27 @@ export default {
       footerTextData,
       cnFooterLinkText: footerTextData.cn,
       cardMe: {
-        title: " ",
-        des: " ",
-        cardColor: "#141516",
-        tag: "tag",
+        title: ' ',
+        des: ' ',
+        cardColor: '#141516',
+        tag: 'tag',
         isButton: false,
         isTitle: false,
         isDes: false,
         isBlack: true,
         isWhiteBotton: false,
         isTag: false,
-        bgImg: Portrait
+        bgImg: Portrait,
       },
       cards: cnDate,
       buttons: {
         href: {
-          href1: "https://baidu.com"
+          href1: 'https://baidu.com',
         },
-        buttonIcon: link
-      }
+        buttonIcon: link,
+      },
     };
-  }
+  },
 };
 </script>
 
@@ -416,6 +514,45 @@ export default {
 @import "./src/style/global.scss";
 @import "./src/style/mobile.scss";
 @import "./src/style/en.scss";
+
+#character {
+  ::v-deep .des {
+    span {
+      width: 482px;
+      color: #2c313e !important;
+    }
+  }
+  ::v-deep .ghostButton {
+    cursor: default;
+    &:hover {
+      filter: none;
+      border: 1px solid #3a4151;
+    }
+    position: relative;
+    .ghostButton-icon {
+      display: none;
+    }
+    &::before {
+      cursor: default;
+      position: absolute;
+      top: 4px;
+      right: -120px;
+      content: "";
+      display: block;
+      width: 92px;
+      height: 35px;
+      background: url("../assets/sketchFigma_icon.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  ::v-deep .img-area {
+    img {
+      width: 459px;
+      height: 323px;
+      margin-right: 52px;
+    }
+  }
+}
 
 .langSwitch {
   background-image: url("../assets/index/language_cn.svg") !important;
@@ -728,11 +865,21 @@ export default {
         }
       }
       &:nth-of-type(5) {
+        .des {
+          img {
+            width: 78px;
+            height: 40px;
+          }
+        }
+
+        .ghostButton {
+          background: #eeeff0;
+        }
         .defaultButton {
           &:hover {
-            background-color: #edf0f2 !important;
-            color: #ffde4a !important;
-            border: 1px solid #ffde4a !important;
+            background-color: $white;
+            color: $blue;
+            border: 1px solid $blue;
           }
         }
       }
@@ -765,6 +912,14 @@ export default {
       }
 
       &:nth-of-type(5) {
+        ::v-deep .des {
+          span {
+            width: 400px;
+          }
+        }
+      }
+
+      &:nth-of-type(6) {
         &::v-deep .des {
           img {
             height: 60px;
@@ -789,6 +944,14 @@ export default {
               width: 14px !important;
               height: 14px !important;
             }
+          }
+        }
+      }
+
+       &:nth-of-type(7) {
+        ::v-deep .des {
+          span {
+           width: 440px !important;
           }
         }
       }
@@ -1044,8 +1207,9 @@ export default {
       .ghostButton {
         position: relative;
         &:hover {
-          background-color: white;
+          background-color: white !important;
           color: #fb85a1 !important;
+          filter: none !important;
 
           img {
             opacity: 0;

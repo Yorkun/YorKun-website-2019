@@ -22,6 +22,8 @@ import captcha_logo from '../assets/index/captcha_logo.svg';
 import wangguan_logo from '../assets/index/wangguan_logo.svg';
 import banana_logo from '../assets/index/banana_logo.svg';
 import animation from '../assets/index/animation.png';
+import yoke_logo from '../assets/yoke_logo.svg';
+import yoke_banner from '../assets/yoke_banner.png';
 
 export default [
   {
@@ -80,7 +82,6 @@ export default [
     tag: 'App UI 设计',
     buttonTextD: '项目详情',
     buttonTextG: ' ',
-
     isTagWhite: false,
     tagColor: 'rgba(0,0,0,0.08)',
     isButton: true,
@@ -94,5 +95,28 @@ export default [
     isTag: true,
     bgImg: app_onelogin,
     hrefD: '/onelongin',
+  },
+  {
+    title: 'APP 一键登录',
+    cardLogo: yoke_logo,
+    des:
+      '根据自己平时的工作习惯，整合了一些设计师常用的搜索网站。能同时打开多个网站的搜索结果，适合快速寻找灵感。',
+    cardColor: '#EEEFF0',
+    tag: 'App UI 设计',
+    buttonTextD: '',
+    buttonTextG: '前往网站',
+    isTagWhite: false,
+    tagColor: 'rgba(0,0,0,0.08)',
+    isButton: false,
+    btnIconD: '',
+    btnIconG: link_icon_b,
+    isGhostButton: true,
+    isTitle: true,
+    isDes: true,
+    isBlack: false,
+    isWhiteBotton: false,
+    isTag: true,
+    bgImg: yoke_banner,
+    hrefG: 'https://yoke.now.sh',
   },
 ];
