@@ -6,18 +6,19 @@
 </template>
 
 <script>
-import loading from "./components/loading.vue";
+import loading from './components/loading.vue';
 
 export default {
-  name: "app",
-  components: { loading }
+  name: 'app',
+  components: { loading },
 };
 </script>
+
 
 <style lang="scss">
 @import "../src/style/global.scss";
 @import "../src/style/reset.css";
-  
+
 #app {
   font-family: source-han-sans-simplified-c, sans-serif;
   font-style: normal;
@@ -32,5 +33,9 @@ export default {
 body {
   width: 100vw;
   overflow-x: hidden;
+}
+
+.tag {
+  display: none !important;
 }
 </style>
