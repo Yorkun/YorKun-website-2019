@@ -17,7 +17,7 @@ export default {
 <style lang="scss">
 @import "../src/style/global.scss";
 @import "../src/style/reset.css";
-
+  
 #app {
   font-family: source-han-sans-simplified-c, sans-serif;
   font-style: normal;
