@@ -12,7 +12,7 @@
     </div>
     <div
       class="globalFooter_copyright"
-    >Designed by YorKun and coded by Yancy Min. © 2019 YORKUN. All rights reserved.</div>
+    >Designed by YorKun and coded by Yancy Min. Site is hosted on Github and deployed by ZEIT.</div>
   </div>
 </template>
 

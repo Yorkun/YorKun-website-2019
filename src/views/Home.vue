@@ -396,7 +396,7 @@ export default {
         title: '小蕉 BANANA',
         cardLogo: character_logo,
         des:
-          'Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 450 coolest objects!',
+          'Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 400 coolest objects!',
         cardColor: ' #F5F6F8',
         tag: 'Cartoon Design',
         buttonTextD: '',
@@ -420,7 +420,7 @@ export default {
           title: '小蕉 BANANA',
           cardLogo: character_logo,
           des:
-            'Character Kit 是一套扁平卡通人物合集，可运用在各种设计项目中, 100 组预设形象以及超过 450 个头部/穿着部件，任意搭配！',
+            'Character Kit 是一套扁平卡通人物合集，可运用在各种设计项目中,  100 组预设形象以及超过 400 个头部/穿着部件，任意搭配！',
           cardColor: ' #F5F6F8',
           tag: '主题/表情设计',
           buttonTextD: '',

@@ -100,7 +100,7 @@ export default [
     title: 'APP 一键登录',
     cardLogo: yoke_logo,
     des:
-      '根据自己平时的工作习惯，整合了一些设计师常用的搜索网站。能同时打开多个网站的搜索结果，适合快速寻找灵感。',
+      '根据自己平时的工作习惯，整合了一些设计师常用的搜索网站。能同时打开多个网站的搜索结果，快速寻找灵感。',
     cardColor: '#EEEFF0',
     tag: 'App UI 设计',
     buttonTextD: '',
