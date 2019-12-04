@@ -482,7 +482,9 @@ export default {
       cnMotionCardData: motionCardData.cn,
       cnXsCardData: xsCardData.cn,
       xsCardData,
+      // 首页语言切换 En:F Cn:T
       isActive: false,
+      // 首页语言切换
       footerTextData,
       cnFooterLinkText: footerTextData.cn,
       cardMe: {
