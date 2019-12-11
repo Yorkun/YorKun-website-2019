@@ -94,7 +94,7 @@ export default [
     isWhiteBotton: false,
     isTag: true,
     bgImg: app_onelogin,
-    hrefD: '/onelongin',
+    hrefD: '/onelogin',
   },
   {
     title: 'APP 一键登录',
