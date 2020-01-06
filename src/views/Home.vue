@@ -232,40 +232,40 @@
 </template>
 
 <script>
-import defaultButton from '../components/defaultButton.vue';
-import ghostButton from '../components/ghostButton.vue';
-import card from '../components/card.vue';
-import motionCard from '../components/motionCard.vue';
-import smallCard from '../components/smallCard.vue';
-import xsCard from '../components/xsCard.vue';
-import globalFooter from '../components/globalFooter.vue';
-import top from '../components/top.vue';
-import link from '../assets/index/button-icon/link_icon.svg';
-import geetestweb from '../assets/index/geetestweb.png';
-import ui_captcha from '../assets/index/ui_captcha.gif';
-import app_onelogin from '../assets/index/app_onelogin.png';
-import Portrait from '../assets/index/IMG_3045.png';
-import link_icon_b from '../assets/index/link_icon_b.svg';
-import geetestweb_logo from '../assets/index/geetestweb_logo.svg';
-import captcha_logo from '../assets/index/captcha_logo.svg';
-import wangguan_logo from '../assets/index/wangguan_logo.svg';
-import cnDate from '../data/cn.js';
-import enDate from '../data/en.js';
-import info from '../data/info.js';
-import nav from '../data/nav.js';
-import meDes from '../data/cardMe.js';
-import banana from '../data/banana.js';
-import smallCardData from '../data/smallCard.js';
-import motionCardData from '../data/motionCard.js';
-import xsCardData from '../data/xsCard.js';
-import footerTextData from '../data/footerText.js';
-import character_banner from '../assets/character_banner.png';
-import character_logo from '../assets/character_logo.svg';
-import sketchFigma_icon from '../assets/sketchFigma_icon.png';
+import defaultButton from "../components/defaultButton.vue";
+import ghostButton from "../components/ghostButton.vue";
+import card from "../components/card.vue";
+import motionCard from "../components/motionCard.vue";
+import smallCard from "../components/smallCard.vue";
+import xsCard from "../components/xsCard.vue";
+import globalFooter from "../components/globalFooter.vue";
+import top from "../components/top.vue";
+import link from "../assets/index/button-icon/link_icon.svg";
+import geetestweb from "../assets/index/geetestweb.png";
+import ui_captcha from "../assets/index/ui_captcha.gif";
+import app_onelogin from "../assets/index/app_onelogin.png";
+import Portrait from "../assets/index/IMG_3045.png";
+import link_icon_b from "../assets/index/link_icon_b.svg";
+import geetestweb_logo from "../assets/index/geetestweb_logo.svg";
+import captcha_logo from "../assets/index/captcha_logo.svg";
+import wangguan_logo from "../assets/index/wangguan_logo.svg";
+import cnDate from "../data/cn.js";
+import enDate from "../data/en.js";
+import info from "../data/info.js";
+import nav from "../data/nav.js";
+import meDes from "../data/cardMe.js";
+import banana from "../data/banana.js";
+import smallCardData from "../data/smallCard.js";
+import motionCardData from "../data/motionCard.js";
+import xsCardData from "../data/xsCard.js";
+import footerTextData from "../data/footerText.js";
+import character_banner from "../assets/character_banner.png";
+import character_logo from "../assets/character_logo.svg";
+import sketchFigma_icon from "../assets/sketchFigma_icon.png";
 
 export default {
-  name: 'home',
-  props: ['buttonIcon'],
+  name: "home",
+  props: ["buttonIcon"],
   components: {
     defaultButton,
     ghostButton,
@@ -274,7 +274,7 @@ export default {
     smallCard,
     xsCard,
     globalFooter,
-    top,
+    top
   },
   methods: {
     langSwitch() {
@@ -307,7 +307,7 @@ export default {
         this.character.en = this.character.cn;
         this.isEn = false;
       }
-    },
+    }
   },
   watch: {
     screenWidth(val) {
@@ -324,58 +324,59 @@ export default {
           that.timer = false;
         }, 400);
       }
-    },
+    }
   },
   mounted() {
     this.ok = true;
     this.langSwitch();
-    const nav = document.getElementById('nav-1');
-    const mobileNav = document.getElementById('nav-2');
+    const nav = document.getElementById("nav-1");
+    const mobileNav = document.getElementById("nav-2");
     const headerOffset = nav.offsetTop + nav.offsetHeight + 20;
-    const mobileHeaderOffset = mobileNav.offsetTop + mobileNav.offsetHeight + 100;
-    const project = document.getElementById('project');
-    const works = document.getElementById('works');
+    const mobileHeaderOffset =
+      mobileNav.offsetTop + mobileNav.offsetHeight + 100;
+    const project = document.getElementById("project");
+    const works = document.getElementById("works");
 
-    window.addEventListener('scroll', (e) => {
+    window.addEventListener("scroll", e => {
       if (window.scrollY >= headerOffset) {
-        nav.classList.add('nav-move');
+        nav.classList.add("nav-move");
       } else {
-        nav.classList.remove('nav-move');
+        nav.classList.remove("nav-move");
       }
 
       if (window.scrollY >= mobileHeaderOffset) {
-        mobileNav.classList.add('nav-move', 'm-nav-move');
+        mobileNav.classList.add("nav-move", "m-nav-move");
       } else {
-        mobileNav.classList.remove('nav-move', 'm-nav-move');
+        mobileNav.classList.remove("nav-move", "m-nav-move");
       }
 
       if (window.scrollY === project.offsetTop) {
-        nav.classList.add('anchorOn');
+        nav.classList.add("anchorOn");
       } else {
-        nav.classList.remove('anchorOn');
+        nav.classList.remove("anchorOn");
       }
       if (window.scrollY === works.offsetTop) {
-        nav.classList.add('anchorOn2');
+        nav.classList.add("anchorOn2");
       } else {
-        nav.classList.remove('anchorOn2');
+        nav.classList.remove("anchorOn2");
       }
       if (window.scrollY === 3828 || window.scrollY === 3768) {
-        nav.classList.add('anchorOn3');
+        nav.classList.add("anchorOn3");
       } else {
-        nav.classList.remove('anchorOn3');
+        nav.classList.remove("anchorOn3");
       }
     });
 
     function tag(val) {
-      const tags = document.querySelectorAll('.tag');
+      const tags = document.querySelectorAll(".tag");
 
-      if (val < '600' || document.body.clientWidth < '600') {
-        [].forEach.call(tags, (tag) => {
-          tag.style.display = 'none';
+      if (val < "600" || document.body.clientWidth < "600") {
+        [].forEach.call(tags, tag => {
+          tag.style.display = "none";
         });
       } else {
-        [].forEach.call(tags, (tag) => {
-          tag.style.display = 'block';
+        [].forEach.call(tags, tag => {
+          tag.style.display = "block";
         });
       }
     }
@@ -383,29 +384,30 @@ export default {
     tag();
 
     const that = this;
-    window.onresize = () => (() => {
-      window.screenWidth = document.body.clientWidth;
-      that.screenWidth = window.screenWidth;
+    window.onresize = () =>
+      (() => {
+        window.screenWidth = document.body.clientWidth;
+        that.screenWidth = window.screenWidth;
 
-      tag(that.screenWidth);
-    })();
+        tag(that.screenWidth);
+      })();
   },
   data() {
     return {
       characterData: {
-        title: '小蕉 BANANA',
+        title: "Gee me",
         cardLogo: character_logo,
         des:
-          'Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 400 coolest objects!',
-        cardColor: ' #F5F6F8',
-        tag: 'Cartoon Design',
-        buttonTextD: '',
-        buttonTextG: 'Coming soon',
+          "GEE! ME is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 400 coolest objects!",
+        cardColor: " #F5F6F8",
+        tag: "Cartoon Design",
+        buttonTextD: "",
+        buttonTextG: "See the live",
         isTagWhite: true,
-        tagColor: 'rgba(0,0,0,0.08)',
+        tagColor: "rgba(0,0,0,0.08)",
         isButton: false,
-        btnIconD: '',
-        btnIconG: '',
+        btnIconD: "",
+        btnIconG: link_icon_b,
         isGhostButton: true,
         isTitle: true,
         isDes: true,
@@ -413,23 +415,23 @@ export default {
         isWhiteBotton: true,
         isTag: true,
         bgImg: character_banner,
-        hrefD: '/banana',
+        hrefG: "https://geeme.now.sh/"
       },
       character: {
         cn: {
-          title: '小蕉 BANANA',
+          title: "Gee me",
           cardLogo: character_logo,
           des:
-            'Character Kit 是一套扁平卡通人物合集，可运用在各种设计项目中,  100 组预设形象以及超过 400 个头部/穿着部件，任意搭配！',
-          cardColor: ' #F5F6F8',
-          tag: '主题/表情设计',
-          buttonTextD: '',
-          buttonTextG: 'Coming soon',
+            "GEE! ME 是一套扁平卡通人物合集，可运用在各种设计项目中,  100 组预设形象以及超过 400 个头部、穿着部件，任意搭配。",
+          cardColor: " #F5F6F8",
+          tag: "主题/表情设计",
+          buttonTextD: "",
+          buttonTextG: "前往网站",
           isTagWhite: true,
-          tagColor: 'rgba(0,0,0,0.08)',
+          tagColor: "rgba(0,0,0,0.08)",
           isButton: false,
-          btnIconD: '',
-          btnIconG: '',
+          btnIconD: "",
+          btnIconG: link_icon_b,
           isGhostButton: true,
           isTitle: true,
           isDes: true,
@@ -437,22 +439,22 @@ export default {
           isWhiteBotton: true,
           isTag: true,
           bgImg: character_banner,
-          hrefD: '/banana',
+          hrefG: "https://geeme.now.sh/"
         },
         en: {
-          title: '小蕉 BANANA',
+          title: "小蕉 BANANA",
           cardLogo: character_logo,
           des:
-            'Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 450 coolest objects!',
-          cardColor: ' #F5F6F8',
-          tag: 'Cartoon Design',
-          buttonTextD: '',
-          buttonTextG: 'Coming soon',
+            "Character Kit is a great set of flat graphics required for any design tasks, 100 cartoon characters and over 450 coolest objects!",
+          cardColor: " #F5F6F8",
+          tag: "Cartoon Design",
+          buttonTextD: "",
+          buttonTextG: "Coming soon",
           isTagWhite: true,
-          tagColor: 'rgba(0,0,0,0.08)',
+          tagColor: "rgba(0,0,0,0.08)",
           isButton: false,
-          btnIconD: '',
-          btnIconG: '',
+          btnIconD: "",
+          btnIconG: "",
           isGhostButton: true,
           isTitle: true,
           isDes: true,
@@ -460,8 +462,8 @@ export default {
           isWhiteBotton: true,
           isTag: true,
           bgImg: character_banner,
-          hrefD: '/banana',
-        },
+          hrefD: "/banana"
+        }
       },
       screenWidth: document.body.clientWidth,
       isEn: true,
@@ -483,32 +485,32 @@ export default {
       cnXsCardData: xsCardData.cn,
       xsCardData,
       // 首页语言切换 En:F Cn:T
-      isActive:true,
+      isActive: true,
       // 首页语言切换
       footerTextData,
       cnFooterLinkText: footerTextData.cn,
       cardMe: {
-        title: ' ',
-        des: ' ',
-        cardColor: '#141516',
-        tag: 'tag',
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
         isButton: false,
         isTitle: false,
         isDes: false,
         isBlack: true,
         isWhiteBotton: false,
         isTag: false,
-        bgImg: Portrait,
+        bgImg: Portrait
       },
       cards: cnDate,
       buttons: {
         href: {
-          href1: 'https://baidu.com',
+          href1: "https://baidu.com"
         },
-        buttonIcon: link,
-      },
+        buttonIcon: link
+      }
     };
-  },
+  }
 };
 </script>
 
@@ -525,14 +527,26 @@ export default {
     }
   }
   ::v-deep .ghostButton {
-    cursor: default;
+    cursor: pointer;
     &:hover {
       filter: none;
       border: 1px solid #3a4151;
+      // border: 1px solid transparent;
+    }
+    a {
+      width: 100%;
+      height: 45px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      &:hover {
+        filter: invert(1);
+
+        background: white;
+      }
     }
     position: relative;
     .ghostButton-icon {
-      display: none;
+      // display: none;
     }
     &::before {
       cursor: default;
@@ -950,10 +964,15 @@ export default {
         }
       }
 
-       &:nth-of-type(7) {
+      &:nth-of-type(7) {
         ::v-deep .des {
+          img {
+            width: 170px;
+            height: auto;
+          }
+
           span {
-           width: 440px !important;
+            width: 440px !important;
           }
         }
       }
