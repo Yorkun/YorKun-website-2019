@@ -4,7 +4,7 @@
       <span>Links:</span>
       <a href="https://yancymin.design" target="_blank">Yancy Min</a>
       <a href="https://www.liuchangyi.com/" target="_blank">Charlie Liu</a>
-      <a href="https://figma.cool/" target="_blank">FigmaCN Plugin</a>
+      <a href="https://figma.cool/" target="_blank">Figma.Cool</a>
       <a href="https://www.dribbbbble.com" target="_blank">Dark Mode for Dribbble</a>
       <!-- <a href="http://yorkunpic.lofter.com" target="_blank">
         {{footerLinkText}}

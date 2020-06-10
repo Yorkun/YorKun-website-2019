@@ -219,7 +219,7 @@
               </div>
               <div class="wechat">
                 <i></i>
-                <p>chengyork</p>
+                <p>yorkun-cheng</p>
               </div>
             </div>
           </div>
