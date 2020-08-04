@@ -1,6 +1,5 @@
 <template>
   <div class="smallCard2" :style="'background-color:' + cardColor">
-    <router-link :to="link" class="link"></router-link>
     <div class="tag" v-if="isTag" :style="'background-color:' + tagColor">{{tag}}</div>
     <img :src="bgImg" class="bgImg" />
     <div class="smallCard_text">
@@ -94,7 +93,7 @@ export default {
   img {
     z-index: 0;
     position: absolute;
-    height: 100%;
+    height: 142%;
     transition: all 0.3s ease;
   }
   .centerImg {
