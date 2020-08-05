@@ -684,6 +684,7 @@ export default {
   @include flex-column;
 
   .head {
+    position: relative;
     width: 100%;
     height: 680px;
     background-color: $black;
@@ -693,7 +694,8 @@ export default {
     overflow: hidden;
 
     video {
-      height: 680px;
+      width: 100vw;
+      bottom: 0;
       z-index: 0;
       position: absolute;
     }
