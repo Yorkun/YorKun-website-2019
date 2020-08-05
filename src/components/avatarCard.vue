@@ -19,10 +19,11 @@
       <div class="img-area" :style="`background-image: url(${bgImg})`">
         <div class="avatar-content">
           <img src="../assets/index/avatar.png" alt="avatar" class="avatar" />
-          <a class="ghostButton" href="https://yorkun.com" target="_blank">
+          <a class="ghostButton" href="https://test.com" target="_blank">
             <div class="wrap">
-              Resume
+              <p>Resume</p>
               <img class="link-icon" src="../assets/index/link_icon_w.svg" />
+              <img class="lock-icon" src="../assets/index/lock.svg" />
             </div>
           </a>
         </div>
@@ -205,18 +206,74 @@ export default {
   background-color: transparent;
   transition: all 0.3s ease;
   @include font(14px, $font-color-black-1, 400);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  color: #ffffff;
 
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: #ffffff !important ;
+    }
+  }
+
+  .lock-icon {
+    position: absolute;
+    opacity: 0;
+    transform-origin: top;
+  }
+
+  /* 
   &:hover {
     background: white;
     color: #3a4151;
 
     .link-icon {
       filter: invert(1);
+    }
+  } */
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+
+    p,
+    .link-icon {
+      opacity: 0;
+    }
+
+    .lock-icon {
+      opacity: 1;
+      animation: headShake 1s ease-in-out forwards;
+
+      @keyframes headShake {
+        0% {
+          transform: translateX(0);
+        }
+
+        6.5% {
+          transform: translateX(0) rotateZ(-19deg);
+        }
+
+        18.5% {
+          transform: translateX(0) rotateZ(17deg);
+        }
+
+        31.5% {
+          transform: translateX(0) rotateZ(-15deg);
+        }
+
+        43.5% {
+          transform: translateX(0) rotateZ(13deg);
+        }
+
+        50% {
+          transform: translateX(0);
+        }
+      }
     }
   }
 
@@ -244,6 +301,7 @@ export default {
   width: 120px;
   height: 120px;
   margin-bottom: 28px;
+  filter: brightness(0.86);
 }
 
 .avatar-content {
