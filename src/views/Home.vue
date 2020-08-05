@@ -1,24 +1,24 @@
 <template>
-  <div class="home" id="top" v-show="ok" :class="{en: isEn}">
+  <div class="home" id="top" v-show="ok" :class="{ en: isEn }">
     <div class="head">
       <nav class="nav-1 my-header-nav" id="nav-1">
         <div class="nav-wrap">
           <ul>
             <li>
-              <a href="#project">{{nav1[0]}}</a>
+              <a href="#project">{{ nav1[0] }}</a>
             </li>
             <li>
-              <a href="#works">{{nav1[1]}}</a>
+              <a href="#works">{{ nav1[1] }}</a>
             </li>
             <li>
-              <a href="#about">{{nav1[2]}}</a>
+              <a href="#about">{{ nav1[2] }}</a>
             </li>
           </ul>
         </div>
         <div class="lang" @click="langSwitch()">
           <div class="lang_now">
             <div class="lang_inner">
-              <i :class="{langSwitch: isActive}"></i>
+              <i :class="{ langSwitch: isActive }"></i>
             </div>
           </div>
         </div>
@@ -27,20 +27,20 @@
         <div class="nav-wrap">
           <ul>
             <li>
-              <a href="#project">{{nav1[0]}}</a>
+              <a href="#project">{{ nav1[0] }}</a>
             </li>
             <li>
-              <a href="#works">{{nav1[1]}}</a>
+              <a href="#works">{{ nav1[1] }}</a>
             </li>
             <li>
-              <a href="#about">{{nav1[2]}}</a>
+              <a href="#about">{{ nav1[2] }}</a>
             </li>
           </ul>
         </div>
         <div class="lang" @click="langSwitch()">
           <div class="lang_now">
             <div class="lang_inner">
-              <i :class="{langSwitch: isActive}"></i>
+              <i :class="{ langSwitch: isActive }"></i>
             </div>
           </div>
         </div>
@@ -69,10 +69,10 @@
         :bgImg="cardMe.bgImg"
         id="cardMe"
       >
-        <h1>{{cnMeDes[0]}}</h1>
-        <p class="mb-40">{{cnMeDes[1]}}</p>
-        <h1>{{cnMeDes[2]}}</h1>
-        <p>{{cnMeDes[3]}}</p>
+        <h1>{{ cnMeDes[0] }}</h1>
+        <p class="mb-40">{{ cnMeDes[1] }}</p>
+        <h1>{{ cnMeDes[2] }}</h1>
+        <p>{{ cnMeDes[3] }}</p>
       </card>
       <span id="project"></span>
       <card
@@ -169,17 +169,10 @@
         <smallCard2
           v-for="(item, i) in cnSmallCard2"
           :key="i"
-          :title="cnSmallCard2[i].title"
           :cardColor="cnSmallCard2[i].cardColor"
-          :footer="cnSmallCard2[i].footer"
-          :tag="cnSmallCard2[i].tag"
-          :isTag="cnSmallCard2[i].isTag"
-          :logo="cnSmallCard2[i].logo"
-          :isLogo="cnSmallCard2[i].isLogo"
           :bgImg="cnSmallCard2[i].bgImg"
-          :tagColor="cnSmallCard2[i].tagColor"
-          :isCenterImg="cnSmallCard2[i].isCenterImg"
-          :link="cnSmallCard2[i].link"
+          :cardBg="cnSmallCard2[i].cardBg"
+          :cover="cnSmallCard2[i].cover"
         />
       </div>
 
@@ -215,11 +208,11 @@
       </div>
       <div class="info" id="about">
         <div class="info_about">
-          <h1>{{cnInfo.about[0]}}</h1>
+          <h1>{{ cnInfo.about[0] }}</h1>
           <div class="des" v-html="cnInfo.about[1]"></div>
         </div>
         <div class="info_contact">
-          <h1>{{cnInfo.contact.title}}</h1>
+          <h1>{{ cnInfo.contact.title }}</h1>
           <div class="social">
             <div class="links">
               <a href="https://weibo.com/chengyork" target="_blank"></a>
@@ -353,8 +346,7 @@ export default {
     const nav = document.getElementById("nav-1");
     const mobileNav = document.getElementById("nav-2");
     const headerOffset = nav.offsetTop + nav.offsetHeight + 20;
-    const mobileHeaderOffset =
-      mobileNav.offsetTop + mobileNav.offsetHeight + 100;
+    const mobileHeaderOffset = mobileNav.offsetTop + mobileNav.offsetHeight + 100;
     const project = document.getElementById("project");
     const works = document.getElementById("works");
 
@@ -538,9 +530,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './src/style/global.scss';
-@import './src/style/mobile.scss';
-@import './src/style/en.scss';
+@import "./src/style/global.scss";
+@import "./src/style/mobile.scss";
+@import "./src/style/en.scss";
 
 #character {
   ::v-deep .des {
@@ -576,11 +568,11 @@ export default {
       position: absolute;
       top: 4px;
       right: -120px;
-      content: '';
+      content: "";
       display: block;
       width: 92px;
       height: 35px;
-      background: url('../assets/sketchFigma_icon.png') no-repeat;
+      background: url("../assets/sketchFigma_icon.png") no-repeat;
       background-size: cover;
     }
   }
@@ -594,7 +586,7 @@ export default {
 }
 
 .langSwitch {
-  background-image: url('../assets/index/language_cn.svg') !important;
+  background-image: url("../assets/index/language_cn.svg") !important;
 }
 
 .anchorOn {
@@ -724,13 +716,13 @@ export default {
 
         &::before {
           opacity: 0;
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           display: block;
           width: 34px;
           height: 22px;
-          background-image: url('../assets/index/small_logo.svg');
+          background-image: url("../assets/index/small_logo.svg");
           background-size: cover;
           transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
           transform: translateY(-200%);
@@ -795,7 +787,7 @@ export default {
           width: 100%;
           height: auto;
           top: 46px;
-          background: url('../assets/index/mask.svg') no-repeat;
+          background: url("../assets/index/mask.svg") no-repeat;
           background-size: cover;
           transform-origin: top;
           will-change: transform;
@@ -849,7 +841,7 @@ export default {
           display: inline-block;
           width: 23px;
           height: 20px;
-          background-image: url('../assets/index/language_icon.svg');
+          background-image: url("../assets/index/language_icon.svg");
           background-repeat: no-repeat;
           transition: all 0.3s ease;
 
@@ -1143,19 +1135,19 @@ export default {
               }
 
               &:nth-of-type(1) {
-                background-image: url('../assets/index/links/weibo_icon.svg');
+                background-image: url("../assets/index/links/weibo_icon.svg");
               }
               &:nth-of-type(2) {
-                background-image: url('../assets/index/links/ig_icon.svg');
+                background-image: url("../assets/index/links/ig_icon.svg");
               }
               &:nth-of-type(3) {
-                background-image: url('../assets/index/links/github_icon.svg');
+                background-image: url("../assets/index/links/github_icon.svg");
               }
               &:nth-of-type(4) {
-                background-image: url('../assets/index/links/unsplash_icon.svg');
+                background-image: url("../assets/index/links/unsplash_icon.svg");
               }
               &:nth-of-type(5) {
-                background-image: url('../assets/index/links/behance_icon.svg');
+                background-image: url("../assets/index/links/behance_icon.svg");
               }
             }
           }
@@ -1193,7 +1185,7 @@ export default {
                 height: 16px;
                 display: inline-block;
                 margin-right: 8px;
-                background-image: url('../assets/index/links/mail_icon.svg');
+                background-image: url("../assets/index/links/mail_icon.svg");
                 background-position: center center;
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
@@ -1217,7 +1209,7 @@ export default {
                 height: 16px;
                 display: inline-block;
                 margin-right: 8px;
-                background-image: url('../assets/index/links/wechat_icon.svg');
+                background-image: url("../assets/index/links/wechat_icon.svg");
                 background-position: center center;
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
@@ -1275,19 +1267,19 @@ export default {
           }
         }
         &::after {
-          content: '';
+          content: "";
           opacity: 0;
           position: absolute;
           display: block;
           width: 14px;
           height: 14px;
           right: 22px;
-          background-image: url('../assets/index/reweima_icon-2.svg');
+          background-image: url("../assets/index/reweima_icon-2.svg");
           background-size: cover;
           transition: all 0.3s ease;
         }
         &::before {
-          content: '';
+          content: "";
           visibility: hidden;
           opacity: 0;
           position: absolute;
@@ -1297,7 +1289,7 @@ export default {
           display: block;
           width: 136px;
           height: 141px;
-          background-image: url('../assets/index/reweima_hover.png');
+          background-image: url("../assets/index/reweima_hover.png");
           background-size: 100% 100%;
           transition: all 0.3s ease-in-out;
           transform: translateY(-6px);
@@ -1336,6 +1328,17 @@ export default {
     opacity: 0;
     position: relative;
     bottom: 70px;
+  }
+}
+
+.smallCard2 {
+  &:last-child {
+    ::v-deep .cover {
+      height: 615px;
+      position: relative;
+      top: 14px;
+      left: 27px;
+    }
   }
 }
 </style>

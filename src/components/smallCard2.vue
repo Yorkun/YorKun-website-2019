@@ -1,11 +1,7 @@
 <template>
-  <div class="smallCard2" :style="'background-color:' + cardColor">
-    <div class="tag" v-if="isTag" :style="'background-color:' + tagColor">{{tag}}</div>
+  <div class="smallCard2" :style="`background: url(${cardBg})`">
     <img :src="bgImg" class="bgImg" />
-    <div class="smallCard_text">
-      <h1>{{title}}</h1>
-      <span>{{footer}}</span>
-    </div>
+    <img :src="cover" class="cover" />
   </div>
 </template>
 
@@ -14,13 +10,13 @@ export default {
   name: "smallCard2",
   props: {
     title: String,
-    cardColor: String,
+    cardBg: String,
     footer: String,
     bgImg: String,
     tag: String,
     tagColor: String,
     isTag: Boolean,
-    link: String
+    cover: String
   }
 };
 </script>
@@ -41,16 +37,18 @@ export default {
   width: 590px;
   height: 400px;
   border-radius: 10px;
-  background-color: #ffa51d;
+  background-color: #594f76 !important;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-top: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
   transform: translateY(10%);
   animation: showCard 1s ease forwards;
   @include flex-all-center;
+  cursor: default;
+  background-size: cover !important;
 
-    @keyframes showCard {
+  @keyframes showCard {
     to {
       opacity: 1;
       transform: translateY(0);
@@ -59,6 +57,9 @@ export default {
 
   &:hover {
     .bgImg {
+      /* transform: scale(1.02); */
+    }
+    .cover {
       transform: scale(1.02);
     }
   }
@@ -90,12 +91,20 @@ export default {
     @include font(12px, $font-color-white-2, 400);
   }
 
-  img {
-    z-index: 0;
+  .bgImg {
+    z-index: 9;
     position: absolute;
+    height: 90px;
+    left: 30px;
+    top: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .cover {
     height: 142%;
     transition: all 0.3s ease;
   }
+
   .centerImg {
     height: 90px;
     position: absolute;
