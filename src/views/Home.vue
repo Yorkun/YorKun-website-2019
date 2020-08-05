@@ -55,25 +55,24 @@
       <video src="../assets/banner_video.webm" autoplay muted loop></video>
     </div>
     <div class="container">
-      <card
-        :title="cardMe.title"
-        :des="cardMe.des"
-        :cardColor="cardMe.cardColor"
-        :tag="cardMe.tag"
-        :isTitle="cardMe.isTitle"
-        :isButton="cardMe.isButton"
-        :isDes="cardMe.isDes"
-        :isBlack="cardMe.isBlack"
-        :isWhiteBotton="cardMe.isWhiteBotton"
-        :isTag="cardMe.isTag"
-        :bgImg="cardMe.bgImg"
-        id="cardMe"
+      <avatarCard
+        :title="avatarCard.title"
+        :des="avatarCard.des"
+        :cardColor="avatarCard.cardColor"
+        :tag="avatarCard.tag"
+        :isTitle="avatarCard.isTitle"
+        :isButton="avatarCard.isButton"
+        :isDes="avatarCard.isDes"
+        :isBlack="avatarCard.isBlack"
+        :isWhiteBotton="avatarCard.isWhiteBotton"
+        :isTag="avatarCard.isTag"
+        :bgImg="avatarCard.bgImg"
       >
         <h1>{{ cnMeDes[0] }}</h1>
         <p class="mb-40">{{ cnMeDes[1] }}</p>
         <h1>{{ cnMeDes[2] }}</h1>
         <p>{{ cnMeDes[3] }}</p>
-      </card>
+      </avatarCard>
       <span id="project"></span>
       <card
         v-for="(item, i) in cards"
@@ -244,6 +243,7 @@
 import defaultButton from "../components/defaultButton.vue";
 import ghostButton from "../components/ghostButton.vue";
 import card from "../components/card.vue";
+import avatarCard from "../components/avatarCard.vue";
 import motionCard from "../components/motionCard.vue";
 import smallCard from "../components/smallCard.vue";
 import smallCard2 from "../components/smallCard2.vue";
@@ -286,7 +286,8 @@ export default {
     smallCard2,
     xsCard,
     globalFooter,
-    top
+    top,
+    avatarCard
   },
   methods: {
     langSwitch() {
@@ -517,6 +518,19 @@ export default {
         isTag: false,
         bgImg: Portrait
       },
+      avatarCard: {
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
+        isButton: false,
+        isTitle: false,
+        isDes: false,
+        isBlack: true,
+        isWhiteBotton: false,
+        isTag: false,
+        bgImg: Portrait
+      },
       cards: cnDate,
       buttons: {
         href: {
@@ -530,9 +544,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./src/style/global.scss";
-@import "./src/style/mobile.scss";
-@import "./src/style/en.scss";
+@import './src/style/global.scss';
+@import './src/style/mobile.scss';
+@import './src/style/en.scss';
 
 #character {
   ::v-deep .des {
@@ -568,11 +582,11 @@ export default {
       position: absolute;
       top: 4px;
       right: -120px;
-      content: "";
+      content: '';
       display: block;
       width: 92px;
       height: 35px;
-      background: url("../assets/sketchFigma_icon.png") no-repeat;
+      background: url('../assets/sketchFigma_icon.png') no-repeat;
       background-size: cover;
     }
   }
@@ -586,7 +600,7 @@ export default {
 }
 
 .langSwitch {
-  background-image: url("../assets/index/language_cn.svg") !important;
+  background-image: url('../assets/index/language_cn.svg') !important;
 }
 
 .anchorOn {
@@ -680,7 +694,8 @@ export default {
 
 .home {
   width: 100%;
-  background-color: $gray;
+  /* background-color: $gray; */
+  background-color: hsl(210, 3%, 24%);
   @include flex-column;
 
   .head {
@@ -698,6 +713,7 @@ export default {
       bottom: 0;
       z-index: 0;
       position: absolute;
+      filter: blur(4px) contrast(1.07);
     }
 
     .nav-1 {
@@ -718,13 +734,13 @@ export default {
 
         &::before {
           opacity: 0;
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           display: block;
           width: 34px;
           height: 22px;
-          background-image: url("../assets/index/small_logo.svg");
+          background-image: url('../assets/index/small_logo.svg');
           background-size: cover;
           transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
           transform: translateY(-200%);
@@ -789,7 +805,7 @@ export default {
           width: 100%;
           height: auto;
           top: 46px;
-          background: url("../assets/index/mask.svg") no-repeat;
+          background: url('../assets/index/mask.svg') no-repeat;
           background-size: cover;
           transform-origin: top;
           will-change: transform;
@@ -843,7 +859,7 @@ export default {
           display: inline-block;
           width: 23px;
           height: 20px;
-          background-image: url("../assets/index/language_icon.svg");
+          background-image: url('../assets/index/language_icon.svg');
           background-repeat: no-repeat;
           transition: all 0.3s ease;
 
@@ -1137,19 +1153,19 @@ export default {
               }
 
               &:nth-of-type(1) {
-                background-image: url("../assets/index/links/weibo_icon.svg");
+                background-image: url('../assets/index/links/weibo_icon.svg');
               }
               &:nth-of-type(2) {
-                background-image: url("../assets/index/links/ig_icon.svg");
+                background-image: url('../assets/index/links/ig_icon.svg');
               }
               &:nth-of-type(3) {
-                background-image: url("../assets/index/links/github_icon.svg");
+                background-image: url('../assets/index/links/github_icon.svg');
               }
               &:nth-of-type(4) {
-                background-image: url("../assets/index/links/unsplash_icon.svg");
+                background-image: url('../assets/index/links/unsplash_icon.svg');
               }
               &:nth-of-type(5) {
-                background-image: url("../assets/index/links/behance_icon.svg");
+                background-image: url('../assets/index/links/behance_icon.svg');
               }
             }
           }
@@ -1187,7 +1203,7 @@ export default {
                 height: 16px;
                 display: inline-block;
                 margin-right: 8px;
-                background-image: url("../assets/index/links/mail_icon.svg");
+                background-image: url('../assets/index/links/mail_icon.svg');
                 background-position: center center;
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
@@ -1211,7 +1227,7 @@ export default {
                 height: 16px;
                 display: inline-block;
                 margin-right: 8px;
-                background-image: url("../assets/index/links/wechat_icon.svg");
+                background-image: url('../assets/index/links/wechat_icon.svg');
                 background-position: center center;
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
@@ -1269,19 +1285,19 @@ export default {
           }
         }
         &::after {
-          content: "";
+          content: '';
           opacity: 0;
           position: absolute;
           display: block;
           width: 14px;
           height: 14px;
           right: 22px;
-          background-image: url("../assets/index/reweima_icon-2.svg");
+          background-image: url('../assets/index/reweima_icon-2.svg');
           background-size: cover;
           transition: all 0.3s ease;
         }
         &::before {
-          content: "";
+          content: '';
           visibility: hidden;
           opacity: 0;
           position: absolute;
@@ -1291,7 +1307,7 @@ export default {
           display: block;
           width: 136px;
           height: 141px;
-          background-image: url("../assets/index/reweima_hover.png");
+          background-image: url('../assets/index/reweima_hover.png');
           background-size: 100% 100%;
           transition: all 0.3s ease-in-out;
           transform: translateY(-6px);

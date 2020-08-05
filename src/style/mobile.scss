@@ -170,9 +170,16 @@
           .img-area {
             bottom: -20px;
             right: -20px;
+            width: 100vw;
+            background-position: 100%;
 
             img {
-              height: 320px;
+              // height: 320px;
+            }
+
+            .avatar-content  {
+              margin-top: 64px;
+              margin-right: 0;
             }
 
             &::after {
