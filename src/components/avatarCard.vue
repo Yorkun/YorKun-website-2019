@@ -19,13 +19,13 @@
       <div class="img-area" :style="`background-image: url(${bgImg})`">
         <div class="avatar-content">
           <img src="../assets/index/avatar.png" alt="avatar" class="avatar" />
-          <a class="ghostButton" href="https://test.com" target="_blank">
+          <button class="ghostButton" href="https://test.com" target="_blank" disabled="disabled">
             <div class="wrap">
-              <p>Resume</p>
+              <p>{{resume}}</p>
               <img class="link-icon" src="../assets/index/link_icon_w.svg" />
               <img class="lock-icon" src="../assets/index/lock.svg" />
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -61,6 +61,7 @@ export default {
     hrefD: String,
     hrefG: String,
     avatar: String,
+    resume: String,
   },
   components: {
     defaultButton,

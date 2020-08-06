@@ -67,6 +67,7 @@
         :isWhiteBotton="avatarCard.isWhiteBotton"
         :isTag="avatarCard.isTag"
         :bgImg="avatarCard.bgImg"
+        :resume="avatarCard.resume"
       >
         <h1>{{ cnMeDes[0] }}</h1>
         <p class="mb-40">{{ cnMeDes[1] }}</p>
@@ -166,12 +167,12 @@
           :link="cnSmallCard[i].link"
         />
         <smallCard2
-          v-for="(item, i) in cnSmallCard2"
-          :key="i"
-          :cardColor="cnSmallCard2[i].cardColor"
-          :bgImg="cnSmallCard2[i].bgImg"
-          :cardBg="cnSmallCard2[i].cardBg"
-          :cover="cnSmallCard2[i].cover"
+          v-for="(item, j) in cnSmallCard2"
+          :key="'info-'+ j"
+          :cardColor="cnSmallCard2[j].cardColor"
+          :bgImg="cnSmallCard2[j].bgImg"
+          :cardBg="cnSmallCard2[j].cardBg"
+          :cover="cnSmallCard2[j].cover"
         />
       </div>
 
@@ -295,6 +296,7 @@ export default {
 
       if (this.isActive) {
         this.cnMeDes = this.meDes.en;
+        this.avatarCard = this.avatarCardEN;
         this.cards = this.enDate;
         this.cnInfo = this.info.en;
         this.nav1 = this.nav.en;
@@ -309,6 +311,7 @@ export default {
       }
 
       if (this.isActive === false) {
+        this.avatarCard = this.avatarCardCN;
         this.cnMeDes = this.meDes.cn;
         this.cards = this.cnDate;
         this.cnInfo = this.info.cn;
@@ -352,6 +355,9 @@ export default {
     const works = document.getElementById("works");
 
     window.addEventListener("scroll", e => {
+      if (window.scrollY >= headerOffset) {
+        nav.classList.add("nav-move");
+      }
       if (window.scrollY >= headerOffset) {
         nav.classList.add("nav-move");
       } else {
@@ -529,7 +535,36 @@ export default {
         isBlack: true,
         isWhiteBotton: false,
         isTag: false,
-        bgImg: Portrait
+        bgImg: Portrait,
+        resume: "Resume"
+      },
+      avatarCardEN: {
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
+        isButton: false,
+        isTitle: false,
+        isDes: false,
+        isBlack: true,
+        isWhiteBotton: false,
+        isTag: false,
+        bgImg: Portrait,
+        resume: "Resume"
+      },
+      avatarCardCN: {
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
+        isButton: false,
+        isTitle: false,
+        isDes: false,
+        isBlack: true,
+        isWhiteBotton: false,
+        isTag: false,
+        bgImg: Portrait,
+        resume: "简历"
       },
       cards: cnDate,
       buttons: {
@@ -664,6 +699,8 @@ export default {
   width: calc(100vw - 48px) !important;
   max-width: none !important;
   border-bottom: 1px solid rgba(76, 79, 84, 0.6);
+  background-color: rgba(20, 21, 22, 0.85);
+  backdrop-filter: blur(20px);
 
   .nav-wrap {
     justify-content: flex-end !important;
@@ -714,6 +751,7 @@ export default {
       z-index: 0;
       position: absolute;
       filter: blur(4px) contrast(1.07);
+      transform: scale(1.1);
     }
 
     .nav-1 {
@@ -722,8 +760,6 @@ export default {
       width: 100%;
       padding-top: 24px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
-      background-color: rgba(20, 21, 22, 0.85);
-      backdrop-filter: blur(20px);
       @include flex-all-center;
 
       .nav-wrap {
