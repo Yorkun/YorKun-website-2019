@@ -301,7 +301,7 @@ export default {
       this.isActive = !this.isActive;
 
       if (this.isActive) {
-        window.localStorage.setItem('lang', 0);
+        // window.localStorage.setItem('lang', 0);
         this.cnMeDes = this.meDes.en;
         this.avatarCard = this.avatarCardEN;
         this.cards = this.enDate;
@@ -318,7 +318,7 @@ export default {
       }
 
       if (this.isActive == 0) {
-        window.localStorage.setItem('lang', 1);
+        // window.localStorage.setItem('lang', 1);
         this.avatarCard = this.avatarCardCN;
         this.cnMeDes = this.meDes.cn;
         this.cards = this.cnDate;
@@ -353,7 +353,7 @@ export default {
     }
   },
   mounted() {
-    this.isActive = window.localStorage.getItem("lang");
+    // this.isActive = window.localStorage.getItem("lang");
     this.ok = true;
     this.langSwitch();
     const nav = document.getElementById("nav-1");
