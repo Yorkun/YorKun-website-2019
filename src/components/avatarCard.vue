@@ -220,6 +220,7 @@ export default {
       line-height: 20px;
       text-align: center;
       color: #ffffff !important ;
+      transition: all 0.2s ease;
     }
   }
 
@@ -315,7 +316,7 @@ export default {
 }
 
 .link-icon {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   margin-left: 10px;
 }
 </style>
