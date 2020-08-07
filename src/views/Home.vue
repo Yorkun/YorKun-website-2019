@@ -839,6 +839,7 @@ export default {
         position: absolute;
         bottom: 0;
         overflow: hidden;
+        transform-origin: bottom;
 
         .motion_logo {
           margin: 0 8px;
