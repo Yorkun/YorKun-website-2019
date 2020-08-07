@@ -69,6 +69,12 @@
     bottom: 0 !important;
   }
 
+  .home .head video {
+    width: auto !important;
+    height: 100vh;
+    transform: none !important;
+  }
+
   #nav-1 {
     display: none;
   }
