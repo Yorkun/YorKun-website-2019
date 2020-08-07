@@ -48,8 +48,14 @@
       <div class="head_container">
         <img src="../assets/index/logo_banner.png" alt class="logo" />
         <div class="motion">
-          <img src="../assets/index/mask.svg" alt class="motion_mask" />
-          <img src="../assets/index/name_logo.svg" alt class="motion_logo" />
+          <div class="logo-path">
+            <img src="../assets/index/path-1.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-2.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-3.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-4.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-5.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-6.svg" alt class="motion_logo" />
+          </div>
         </div>
       </div>
       <video src="../assets/banner_video.webm" autoplay muted loop></video>
@@ -830,32 +836,41 @@ export default {
 
       .motion {
         z-index: 9;
-        position: relative;
-        bottom: -158px;
+        position: absolute;
+        bottom: 0;
         overflow: hidden;
 
-        .motion_mask {
-          z-index: 100;
-          position: absolute;
-          display: block;
-          width: 100%;
-          height: auto;
-          top: 46px;
-          background: url('../assets/index/mask.svg') no-repeat;
-          background-size: cover;
-          transform-origin: top;
-          will-change: transform;
-          animation: showLogo1 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        .motion_logo {
+          margin: 0 8px;
+          transform: translateY(150%);
+          animation: pathShow 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          
+          &:nth-of-type(1)  {
+              animation-delay: 0.9s;
+          }
+          &:nth-of-type(2)  {
+              animation-delay: 0.85s;
+          }
+          &:nth-of-type(3)  {
+              animation-delay: 0.8s;
+          }
+          &:nth-of-type(4)  {
+              animation-delay: 0.75s;
+          }
+          &:nth-of-type(5)  {
+              animation-delay: 0.7s;
+          }
+          &:nth-of-type(6)  {
+              animation-delay: 0.65s;
+          }
 
-          @keyframes showLogo1 {
-            0% {
+          @keyframes pathShow {
+            to {
               transform: translateY(0);
-            }
-            100% {
-              transform: translateY(-580px);
             }
           }
         }
+
         &_logo {
           position: relative;
           margin-top: 60px;
