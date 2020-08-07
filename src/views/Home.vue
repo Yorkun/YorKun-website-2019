@@ -848,24 +848,24 @@ export default {
           margin: 0 8px;
           transform: translateY(150%);
           animation: pathShow 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-          
-          &:nth-of-type(1)  {
-              animation-delay: 0.9s;
+
+          &:nth-of-type(1) {
+            animation-delay: 0.9s;
           }
-          &:nth-of-type(2)  {
-              animation-delay: 0.85s;
+          &:nth-of-type(2) {
+            animation-delay: 0.85s;
           }
-          &:nth-of-type(3)  {
-              animation-delay: 0.8s;
+          &:nth-of-type(3) {
+            animation-delay: 0.8s;
           }
-          &:nth-of-type(4)  {
-              animation-delay: 0.75s;
+          &:nth-of-type(4) {
+            animation-delay: 0.75s;
           }
-          &:nth-of-type(5)  {
-              animation-delay: 0.7s;
+          &:nth-of-type(5) {
+            animation-delay: 0.7s;
           }
-          &:nth-of-type(6)  {
-              animation-delay: 0.65s;
+          &:nth-of-type(6) {
+            animation-delay: 0.65s;
           }
 
           @keyframes pathShow {

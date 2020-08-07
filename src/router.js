@@ -49,7 +49,7 @@ export default new Router({
       component: () => import('@/views/404.vue')
     },
     {
-      path: '*',    // 此处需特别注意至于最底部
+      path: '*', 
       redirect: '/404'
     }
   ],
