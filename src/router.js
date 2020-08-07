@@ -14,10 +14,6 @@ export default new Router({
       component: Home,
     },
     {
-      path: '*',
-      redirect: '/',
-    },
-    {
       path: '/geetestWebsite',
       name: 'geetestWebsite',
       component: () => import('./views/geetestWebsite.vue'),
@@ -47,5 +43,14 @@ export default new Router({
       name: 'banana',
       component: () => import('./views/banana.vue'),
     },
+    {
+      name: '404',
+      path: '/404',
+      component: () => import('@/views/404.vue')
+    },
+    {
+      path: '*', 
+      redirect: '/404'
+    }
   ],
 });

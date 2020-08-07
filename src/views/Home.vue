@@ -1,24 +1,24 @@
 <template>
-  <div class="home" id="top" v-show="ok" :class="{en: isEn}">
+  <div class="home" id="top" v-show="ok" :class="{ en: isEn }">
     <div class="head">
       <nav class="nav-1 my-header-nav" id="nav-1">
         <div class="nav-wrap">
           <ul>
             <li>
-              <a href="#project">{{nav1[0]}}</a>
+              <a href="#project">{{ nav1[0] }}</a>
             </li>
             <li>
-              <a href="#works">{{nav1[1]}}</a>
+              <a href="#works">{{ nav1[1] }}</a>
             </li>
             <li>
-              <a href="#about">{{nav1[2]}}</a>
+              <a href="#about">{{ nav1[2] }}</a>
             </li>
           </ul>
         </div>
         <div class="lang" @click="langSwitch()">
           <div class="lang_now">
             <div class="lang_inner">
-              <i :class="{langSwitch: isActive}"></i>
+              <i :class="{ langSwitch: isActive }"></i>
             </div>
           </div>
         </div>
@@ -27,20 +27,20 @@
         <div class="nav-wrap">
           <ul>
             <li>
-              <a href="#project">{{nav1[0]}}</a>
+              <a href="#project">{{ nav1[0] }}</a>
             </li>
             <li>
-              <a href="#works">{{nav1[1]}}</a>
+              <a href="#works">{{ nav1[1] }}</a>
             </li>
             <li>
-              <a href="#about">{{nav1[2]}}</a>
+              <a href="#about">{{ nav1[2] }}</a>
             </li>
           </ul>
         </div>
         <div class="lang" @click="langSwitch()">
           <div class="lang_now">
             <div class="lang_inner">
-              <i :class="{langSwitch: isActive}"></i>
+              <i :class="{ langSwitch: isActive }"></i>
             </div>
           </div>
         </div>
@@ -48,31 +48,38 @@
       <div class="head_container">
         <img src="../assets/index/logo_banner.png" alt class="logo" />
         <div class="motion">
-          <img src="../assets/index/mask.svg" alt class="motion_mask" />
-          <img src="../assets/index/name_logo.svg" alt class="motion_logo" />
+          <div class="logo-path">
+            <img src="../assets/index/path-1.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-2.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-3.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-4.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-5.svg" alt class="motion_logo" />
+            <img src="../assets/index/path-6.svg" alt class="motion_logo" />
+          </div>
         </div>
       </div>
+      <video src="../assets/banner_video.webm" autoplay muted loop></video>
     </div>
     <div class="container">
-      <card
-        :title="cardMe.title"
-        :des="cardMe.des"
-        :cardColor="cardMe.cardColor"
-        :tag="cardMe.tag"
-        :isTitle="cardMe.isTitle"
-        :isButton="cardMe.isButton"
-        :isDes="cardMe.isDes"
-        :isBlack="cardMe.isBlack"
-        :isWhiteBotton="cardMe.isWhiteBotton"
-        :isTag="cardMe.isTag"
-        :bgImg="cardMe.bgImg"
-        id="cardMe"
+      <avatarCard
+        :title="avatarCard.title"
+        :des="avatarCard.des"
+        :cardColor="avatarCard.cardColor"
+        :tag="avatarCard.tag"
+        :isTitle="avatarCard.isTitle"
+        :isButton="avatarCard.isButton"
+        :isDes="avatarCard.isDes"
+        :isBlack="avatarCard.isBlack"
+        :isWhiteBotton="avatarCard.isWhiteBotton"
+        :isTag="avatarCard.isTag"
+        :bgImg="avatarCard.bgImg"
+        :resume="avatarCard.resume"
       >
-        <h1>{{cnMeDes[0]}}</h1>
-        <p class="mb-40">{{cnMeDes[1]}}</p>
-        <h1>{{cnMeDes[2]}}</h1>
-        <p>{{cnMeDes[3]}}</p>
-      </card>
+        <h1>{{ cnMeDes[0] }}</h1>
+        <p class="mb-40">{{ cnMeDes[1] }}</p>
+        <h1>{{ cnMeDes[2] }}</h1>
+        <p>{{ cnMeDes[3] }}</p>
+      </avatarCard>
       <span id="project"></span>
       <card
         v-for="(item, i) in cards"
@@ -165,6 +172,14 @@
           :isCenterImg="cnSmallCard[i].isCenterImg"
           :link="cnSmallCard[i].link"
         />
+        <smallCard2
+          v-for="(item, j) in cnSmallCard2"
+          :key="'info-'+ j"
+          :cardColor="cnSmallCard2[j].cardColor"
+          :bgImg="cnSmallCard2[j].bgImg"
+          :cardBg="cnSmallCard2[j].cardBg"
+          :cover="cnSmallCard2[j].cover"
+        />
       </div>
 
       <span class="break-line"></span>
@@ -199,11 +214,11 @@
       </div>
       <div class="info" id="about">
         <div class="info_about">
-          <h1>{{cnInfo.about[0]}}</h1>
+          <h1>{{ cnInfo.about[0] }}</h1>
           <div class="des" v-html="cnInfo.about[1]"></div>
         </div>
         <div class="info_contact">
-          <h1>{{cnInfo.contact.title}}</h1>
+          <h1>{{ cnInfo.contact.title }}</h1>
           <div class="social">
             <div class="links">
               <a href="https://weibo.com/chengyork" target="_blank"></a>
@@ -235,8 +250,10 @@
 import defaultButton from "../components/defaultButton.vue";
 import ghostButton from "../components/ghostButton.vue";
 import card from "../components/card.vue";
+import avatarCard from "../components/avatarCard.vue";
 import motionCard from "../components/motionCard.vue";
 import smallCard from "../components/smallCard.vue";
+import smallCard2 from "../components/smallCard2.vue";
 import xsCard from "../components/xsCard.vue";
 import globalFooter from "../components/globalFooter.vue";
 import top from "../components/top.vue";
@@ -244,7 +261,7 @@ import link from "../assets/index/button-icon/link_icon.svg";
 import geetestweb from "../assets/index/geetestweb.png";
 import ui_captcha from "../assets/index/ui_captcha.gif";
 import app_onelogin from "../assets/index/app_onelogin.png";
-import Portrait from "../assets/index/IMG_3045.png";
+import Portrait from "../assets/index/banner_1_bg.png";
 import link_icon_b from "../assets/index/link_icon_b.svg";
 import geetestweb_logo from "../assets/index/geetestweb_logo.svg";
 import captcha_logo from "../assets/index/captcha_logo.svg";
@@ -256,6 +273,7 @@ import nav from "../data/nav.js";
 import meDes from "../data/cardMe.js";
 import banana from "../data/banana.js";
 import smallCardData from "../data/smallCard.js";
+import smallCardData2 from "../data/smallCard2.js";
 import motionCardData from "../data/motionCard.js";
 import xsCardData from "../data/xsCard.js";
 import footerTextData from "../data/footerText.js";
@@ -272,21 +290,26 @@ export default {
     card,
     motionCard,
     smallCard,
+    smallCard2,
     xsCard,
     globalFooter,
-    top
+    top,
+    avatarCard
   },
   methods: {
     langSwitch() {
       this.isActive = !this.isActive;
 
       if (this.isActive) {
+        window.localStorage.setItem('lang', 0);
         this.cnMeDes = this.meDes.en;
+        this.avatarCard = this.avatarCardEN;
         this.cards = this.enDate;
         this.cnInfo = this.info.en;
         this.nav1 = this.nav.en;
         this.cnBanana = this.banana.en;
         this.cnSmallCard = this.smallCardData.en;
+        this.cnSmallCard2 = this.smallCardData2.en;
         this.cnMotionCardData = this.motionCardData.en;
         this.cnXsCardData = this.xsCardData.en;
         this.cnFooterLinkText = this.footerTextData.en;
@@ -294,13 +317,16 @@ export default {
         this.isEn = true;
       }
 
-      if (this.isActive === false) {
+      if (this.isActive == 0) {
+        window.localStorage.setItem('lang', 1);
+        this.avatarCard = this.avatarCardCN;
         this.cnMeDes = this.meDes.cn;
         this.cards = this.cnDate;
         this.cnInfo = this.info.cn;
         this.nav1 = this.nav.cn;
         this.cnBanana = this.banana.cn;
         this.cnSmallCard = this.smallCardData.cn;
+        this.cnSmallCard2 = this.smallCardData2.cn;
         this.cnMotionCardData = motionCardData.cn;
         this.cnXsCardData = this.xsCardData.cn;
         this.cnFooterLinkText = this.footerTextData.cn;
@@ -327,17 +353,20 @@ export default {
     }
   },
   mounted() {
+    this.isActive = window.localStorage.getItem("lang");
     this.ok = true;
     this.langSwitch();
     const nav = document.getElementById("nav-1");
     const mobileNav = document.getElementById("nav-2");
     const headerOffset = nav.offsetTop + nav.offsetHeight + 20;
-    const mobileHeaderOffset =
-      mobileNav.offsetTop + mobileNav.offsetHeight + 100;
+    const mobileHeaderOffset = mobileNav.offsetTop + mobileNav.offsetHeight + 100;
     const project = document.getElementById("project");
     const works = document.getElementById("works");
 
     window.addEventListener("scroll", e => {
+      if (window.scrollY >= headerOffset) {
+        nav.classList.add("nav-move");
+      }
       if (window.scrollY >= headerOffset) {
         nav.classList.add("nav-move");
       } else {
@@ -479,13 +508,15 @@ export default {
       banana,
       cnBanana: banana.cn,
       cnSmallCard: smallCardData.cn,
+      cnSmallCard2: smallCardData2.cn,
       smallCardData,
+      smallCardData2,
       motionCardData,
       cnMotionCardData: motionCardData.cn,
       cnXsCardData: xsCardData.cn,
       xsCardData,
       // 首页语言切换 En:F Cn:T
-      isActive: false,
+      isActive: 0,
       // 首页语言切换
       footerTextData,
       cnFooterLinkText: footerTextData.cn,
@@ -502,6 +533,48 @@ export default {
         isTag: false,
         bgImg: Portrait
       },
+      avatarCard: {
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
+        isButton: false,
+        isTitle: false,
+        isDes: false,
+        isBlack: true,
+        isWhiteBotton: false,
+        isTag: false,
+        bgImg: Portrait,
+        resume: "Resume"
+      },
+      avatarCardEN: {
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
+        isButton: false,
+        isTitle: false,
+        isDes: false,
+        isBlack: true,
+        isWhiteBotton: false,
+        isTag: false,
+        bgImg: Portrait,
+        resume: "Resume"
+      },
+      avatarCardCN: {
+        title: " ",
+        des: " ",
+        cardColor: "#141516",
+        tag: "tag",
+        isButton: false,
+        isTitle: false,
+        isDes: false,
+        isBlack: true,
+        isWhiteBotton: false,
+        isTag: false,
+        bgImg: Portrait,
+        resume: "简历"
+      },
       cards: cnDate,
       buttons: {
         href: {
@@ -515,9 +588,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./src/style/global.scss";
-@import "./src/style/mobile.scss";
-@import "./src/style/en.scss";
+@import './src/style/global.scss';
+@import './src/style/mobile.scss';
+@import './src/style/en.scss';
 
 #character {
   ::v-deep .des {
@@ -553,11 +626,11 @@ export default {
       position: absolute;
       top: 4px;
       right: -120px;
-      content: "";
+      content: '';
       display: block;
       width: 92px;
       height: 35px;
-      background: url("../assets/sketchFigma_icon.png") no-repeat;
+      background: url('../assets/sketchFigma_icon.png') no-repeat;
       background-size: cover;
     }
   }
@@ -571,7 +644,7 @@ export default {
 }
 
 .langSwitch {
-  background-image: url("../assets/index/language_cn.svg") !important;
+  background-image: url('../assets/index/language_cn.svg') !important;
 }
 
 .anchorOn {
@@ -635,6 +708,8 @@ export default {
   width: calc(100vw - 48px) !important;
   max-width: none !important;
   border-bottom: 1px solid rgba(76, 79, 84, 0.6);
+  background-color: rgba(20, 21, 22, 0.85);
+  backdrop-filter: blur(20px);
 
   .nav-wrap {
     justify-content: flex-end !important;
@@ -665,16 +740,28 @@ export default {
 
 .home {
   width: 100%;
-  background-color: $gray;
+  /* background-color: $gray; */
+  background-color: hsl(210, 3%, 24%);
   @include flex-column;
 
   .head {
+    position: relative;
     width: 100%;
     height: 680px;
     background-color: $black;
     overflow: hidden;
     @include flex-column;
     @include font(14px, $font-color-white-3, 400);
+    overflow: hidden;
+
+    video {
+      width: 100vw;
+      bottom: 0;
+      z-index: 0;
+      position: absolute;
+      filter: blur(4px) contrast(1.07);
+      transform: scale(1.1);
+    }
 
     .nav-1 {
       z-index: 99999;
@@ -682,8 +769,6 @@ export default {
       width: 100%;
       padding-top: 24px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
-      background-color: rgba(20, 21, 22, 0.85);
-      backdrop-filter: blur(20px);
       @include flex-all-center;
 
       .nav-wrap {
@@ -694,13 +779,13 @@ export default {
 
         &::before {
           opacity: 0;
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           display: block;
           width: 34px;
           height: 22px;
-          background-image: url("../assets/index/small_logo.svg");
+          background-image: url('../assets/index/small_logo.svg');
           background-size: cover;
           transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
           transform: translateY(-200%);
@@ -753,32 +838,43 @@ export default {
       }
 
       .motion {
-        position: relative;
-        bottom: -158px;
+        z-index: 9;
+        position: absolute;
+        bottom: 0;
         overflow: hidden;
+        transform-origin: bottom;
 
-        .motion_mask {
-          z-index: 100;
-          position: absolute;
-          display: block;
-          width: 100%;
-          height: auto;
-          top: 46px;
-          background: url("../assets/index/mask.svg") no-repeat;
-          background-size: cover;
-          transform-origin: top;
-          will-change: transform;
-          animation: showLogo1 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        .motion_logo {
+          margin: 0 8px;
+          transform: translateY(150%);
+          animation: pathShow 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 
-          @keyframes showLogo1 {
-            0% {
+          &:nth-of-type(1) {
+            animation-delay: 0.9s;
+          }
+          &:nth-of-type(2) {
+            animation-delay: 0.85s;
+          }
+          &:nth-of-type(3) {
+            animation-delay: 0.8s;
+          }
+          &:nth-of-type(4) {
+            animation-delay: 0.75s;
+          }
+          &:nth-of-type(5) {
+            animation-delay: 0.7s;
+          }
+          &:nth-of-type(6) {
+            animation-delay: 0.65s;
+          }
+
+          @keyframes pathShow {
+            to {
               transform: translateY(0);
-            }
-            100% {
-              transform: translateY(-510px);
             }
           }
         }
+
         &_logo {
           position: relative;
           margin-top: 60px;
@@ -818,7 +914,7 @@ export default {
           display: inline-block;
           width: 23px;
           height: 20px;
-          background-image: url("../assets/index/language_icon.svg");
+          background-image: url('../assets/index/language_icon.svg');
           background-repeat: no-repeat;
           transition: all 0.3s ease;
 
@@ -982,6 +1078,7 @@ export default {
       margin-top: 10px;
       max-width: 1200px;
       width: 100%;
+      flex-wrap: wrap;
 
       ::v-deep .smallCard {
         &:first-child {
@@ -997,8 +1094,6 @@ export default {
       }
 
       .smallCard {
-        margin-right: 20px;
-
         &:first-child {
           &::v-deep .smallCard_text {
             position: absolute;
@@ -1113,19 +1208,19 @@ export default {
               }
 
               &:nth-of-type(1) {
-                background-image: url("../assets/index/links/weibo_icon.svg");
+                background-image: url('../assets/index/links/weibo_icon.svg');
               }
               &:nth-of-type(2) {
-                background-image: url("../assets/index/links/ig_icon.svg");
+                background-image: url('../assets/index/links/ig_icon.svg');
               }
               &:nth-of-type(3) {
-                background-image: url("../assets/index/links/github_icon.svg");
+                background-image: url('../assets/index/links/github_icon.svg');
               }
               &:nth-of-type(4) {
-                background-image: url("../assets/index/links/unsplash_icon.svg");
+                background-image: url('../assets/index/links/unsplash_icon.svg');
               }
               &:nth-of-type(5) {
-                background-image: url("../assets/index/links/behance_icon.svg");
+                background-image: url('../assets/index/links/behance_icon.svg');
               }
             }
           }
@@ -1163,7 +1258,7 @@ export default {
                 height: 16px;
                 display: inline-block;
                 margin-right: 8px;
-                background-image: url("../assets/index/links/mail_icon.svg");
+                background-image: url('../assets/index/links/mail_icon.svg');
                 background-position: center center;
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
@@ -1187,7 +1282,7 @@ export default {
                 height: 16px;
                 display: inline-block;
                 margin-right: 8px;
-                background-image: url("../assets/index/links/wechat_icon.svg");
+                background-image: url('../assets/index/links/wechat_icon.svg');
                 background-position: center center;
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
@@ -1245,19 +1340,19 @@ export default {
           }
         }
         &::after {
-          content: "";
+          content: '';
           opacity: 0;
           position: absolute;
           display: block;
           width: 14px;
           height: 14px;
           right: 22px;
-          background-image: url("../assets/index/reweima_icon-2.svg");
+          background-image: url('../assets/index/reweima_icon-2.svg');
           background-size: cover;
           transition: all 0.3s ease;
         }
         &::before {
-          content: "";
+          content: '';
           visibility: hidden;
           opacity: 0;
           position: absolute;
@@ -1267,7 +1362,7 @@ export default {
           display: block;
           width: 136px;
           height: 141px;
-          background-image: url("../assets/index/reweima_hover.png");
+          background-image: url('../assets/index/reweima_hover.png');
           background-size: 100% 100%;
           transition: all 0.3s ease-in-out;
           transform: translateY(-6px);
@@ -1306,6 +1401,17 @@ export default {
     opacity: 0;
     position: relative;
     bottom: 70px;
+  }
+}
+
+.smallCard2 {
+  &:last-child {
+    ::v-deep .cover {
+      height: 615px;
+      position: relative;
+      top: 14px;
+      left: 27px;
+    }
   }
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div class="article-nav">
     <div class="nav-wrap">
-      <a href="/">
+      <router-link to="/">
         <img src="../assets/index/small_logo.svg" alt />
-      </a>
-      <a @click="goBack()">
+      </router-link>
+      <router-link to="/">
         <img src="../assets/back.svg" alt />
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
@@ -14,11 +14,6 @@
 <script>
 export default {
   name: "articleNav",
-  methods: {
-    goBack() {
-      this.$router.back(-1);
-    }
-  },
   mounted() {
     window.scrollTo(0, 0);
   }
