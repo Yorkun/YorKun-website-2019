@@ -301,6 +301,7 @@ export default {
       this.isActive = !this.isActive;
 
       if (this.isActive) {
+        window.localStorage.setItem('lang', 0);
         this.cnMeDes = this.meDes.en;
         this.avatarCard = this.avatarCardEN;
         this.cards = this.enDate;
@@ -316,7 +317,8 @@ export default {
         this.isEn = true;
       }
 
-      if (this.isActive === false) {
+      if (this.isActive == 0) {
+        window.localStorage.setItem('lang', 1);
         this.avatarCard = this.avatarCardCN;
         this.cnMeDes = this.meDes.cn;
         this.cards = this.cnDate;
@@ -351,6 +353,7 @@ export default {
     }
   },
   mounted() {
+    this.isActive = window.localStorage.getItem("lang");
     this.ok = true;
     this.langSwitch();
     const nav = document.getElementById("nav-1");
@@ -513,7 +516,7 @@ export default {
       cnXsCardData: xsCardData.cn,
       xsCardData,
       // 首页语言切换 En:F Cn:T
-      isActive: false,
+      isActive: 0,
       // 首页语言切换
       footerTextData,
       cnFooterLinkText: footerTextData.cn,

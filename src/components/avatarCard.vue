@@ -206,6 +206,7 @@ export default {
   border: 1px solid #ffffff;
   background-color: transparent;
   transition: all 0.3s ease;
+  cursor: default;
   @include font(14px, $font-color-black-1, 400);
 
   .wrap {
