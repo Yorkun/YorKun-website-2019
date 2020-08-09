@@ -760,7 +760,9 @@ export default {
       z-index: 0;
       position: absolute;
       filter: blur(4px) contrast(1.07);
-      transform: scale(1.1);
+      transform: scale(1.2);
+      top: 0;
+      transform-origin: top;
     }
 
     .nav-1 {
