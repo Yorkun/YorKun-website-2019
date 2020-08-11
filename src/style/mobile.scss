@@ -3,6 +3,11 @@
     display: none;
   }
 }
+@media screen and (max-width: 1200px) {
+  video {
+    width: auto !important  ;
+  }
+}
 
 @media screen and (max-width: 320px) {
   #app {
@@ -170,7 +175,7 @@
               // height: 320px;
             }
 
-            .avatar-content  {
+            .avatar-content {
               margin-top: 64px;
               margin-right: 0;
             }
@@ -179,7 +184,7 @@
               position: absolute;
               top: 0;
               z-index: 2;
-              content: '';
+              content: "";
               display: block;
               width: 120%;
               height: 160px;
@@ -224,7 +229,7 @@
               position: absolute;
               top: 0;
               z-index: 2;
-              content: '';
+              content: "";
               display: block;
               width: 120%;
               height: 160px;
@@ -306,7 +311,7 @@
               position: absolute;
               top: 0;
               z-index: 2;
-              content: '';
+              content: "";
               display: block;
               width: 120%;
               height: 160px;
@@ -358,7 +363,7 @@
               position: absolute;
               top: 0;
               z-index: 2;
-              content: '';
+              content: "";
               display: block;
               width: 120%;
               height: 160px;
@@ -464,28 +469,34 @@
       }
     }
 
+    .smallCard2 {
+          margin-top: 0
+    }
+
     .smallCards {
       flex-direction: column;
+
 
       ::v-deep .smallCard2 {
         width: 100%;
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         height: 300px;
 
         .bgImg {
-            left: 12px;
-            top: 12px;
+          left: 12px;
+          top: 12px;
         }
 
         .cover {
-            margin-right: 100px;
+          margin-right: 100px;
         }
 
         &:last-child {
-            .cover {
-                transform: scale(0.7);
-            }
+          margin-top: 10px;
+          .cover {
+            transform: scale(0.7);
+          }
         }
       }
 
@@ -608,7 +619,7 @@
           position: absolute;
           top: 0;
           z-index: 2;
-          content: '';
+          content: "";
           display: block;
           width: 120%;
           height: 160px;
