@@ -1,0 +1,51 @@
+.en #cardMe .des p {
+  font-size: 14px;
+}
+
+.en .head .nav-1 .nav-wrap ul {
+  position: relative;
+  left: -10px;
+}
+
+.en .nav-move ul {
+  left: 8px !important;
+}
+
+.en .container .card:nth-of-type(2)::v-deep .des span {
+  width: 420px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .en .container .card:nth-of-type(2)::v-deep .des span {
+    width: 90% !important;
+  }
+}
+
+.en .container .card:nth-of-type(5)::v-deep .des span {
+  width: 420px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .en .container .card:nth-of-type(5)::v-deep .des span {
+    width: 90% !important;
+  }
+}
+
+.en #banana ::v-deep .ghostButton::after {
+  right: 31px !important;
+  top: 15px !important;
+}
+
+.en #about h1 {
+  width: 180px;
+}
+
+.en .motionCard ::v-deep .defaultButton a {
+  padding-bottom: 2px;
+}
+
+.en .motionCard ::v-deep .defaultButton a img {
+  position: relative;
+  top: 1px;
+}
+/*# sourceMappingURL=en.css.map */
