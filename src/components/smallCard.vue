@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/global.scss';
+@import "../style/global.scss";
 
 .link {
   width: 100%;
@@ -41,8 +41,7 @@ export default {
 
 .smallCard {
   position: relative;
-  max-width: 590px;
-  width: calc(50% - 10px);
+  width: 590px;
   height: 400px;
   border-radius: 10px;
   background-color: #ffa51d;
@@ -54,7 +53,7 @@ export default {
   animation: showCard 1s ease forwards;
   @include flex-all-center;
 
-  @keyframes showCard {
+    @keyframes showCard {
     to {
       opacity: 1;
       transform: translateY(0);
