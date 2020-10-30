@@ -21,7 +21,7 @@
           <img src="../assets/index/avatar.png" alt="avatar" class="avatar" />
           <button class="ghostButton" href="https://test.com" target="_blank" disabled="disabled">
             <div class="wrap">
-              <p>{{resume}}</p>
+              <p>{{profile}}</p>
               <img class="link-icon" src="../assets/index/link_icon_w.svg" />
               <img class="lock-icon" src="../assets/index/lock.svg" />
             </div>
@@ -61,7 +61,7 @@ export default {
     hrefD: String,
     hrefG: String,
     avatar: String,
-    resume: String,
+    profile: String,
   },
   components: {
     defaultButton,

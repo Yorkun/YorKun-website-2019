@@ -73,7 +73,7 @@
         :isWhiteBotton="avatarCard.isWhiteBotton"
         :isTag="avatarCard.isTag"
         :bgImg="avatarCard.bgImg"
-        :resume="avatarCard.resume"
+        :profile="avatarCard.profile"
       >
         <h1>{{ cnMeDes[0] }}</h1>
         <p class="mb-40">{{ cnMeDes[1] }}</p>
@@ -545,7 +545,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        resume: "Resume"
+        profile: "profile"
       },
       avatarCardEN: {
         title: " ",
@@ -559,7 +559,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        resume: "Resume"
+        profile: "profile"
       },
       avatarCardCN: {
         title: " ",
@@ -573,7 +573,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        resume: "简历"
+        profile: "简历"
       },
       cards: cnDate,
       buttons: {
