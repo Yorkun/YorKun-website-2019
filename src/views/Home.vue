@@ -559,7 +559,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        profile: "profile"
+        profile: "Profile"
       },
       avatarCardCN: {
         title: " ",
@@ -573,7 +573,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        profile: "简历"
+        profile: "个人信息"
       },
       cards: cnDate,
       buttons: {
