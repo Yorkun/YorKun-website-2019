@@ -230,11 +230,21 @@
             <div class="contact-wrap">
               <div class="mail">
                 <i></i>
-                <p>yorkuncheng@gmail.com</p>
+                <p @click="btnClick('email')">
+                  <transition name="fade">
+                     <span v-if="email" key="email">yorkuncheng@gmail.com</span>
+                     <span v-else key="text">{{isEn? 'Show My E-mail' : '查看我的邮箱'}}</span>
+                  </transition>
+                </p>
               </div>
               <div class="wechat">
                 <i></i>
-                <p>yorkun-cheng</p>
+                <p @click="btnClick('weixin')">
+                  <transition name="fade">
+                     <span v-if="weixin" key="weixin">yorkun-cheng</span>
+                     <span v-else key="text2">{{isEn? 'Show My WeChat' : '查看我的微信'}}</span>
+                  </transition>
+                </p>
               </div>
             </div>
           </div>
@@ -333,6 +343,26 @@ export default {
         this.character.en = this.character.cn;
         this.isEn = false;
       }
+    },
+    // 按钮点击获取信息
+    btnClick (e) {
+      this.currentInfo =  e === 'email'
+      this.captchaObj && this.captchaObj.showBox()
+    },
+    // 初始化验证码
+    initCaptcha (e) {
+      window.initGeetest4({
+        captchaId: 'c366396a62477f4def90c18b075983ad',
+        product: 'bind',
+      }, (captchaObj) => {
+        // captcha为验证码实例
+        captchaObj.onReady(() => {
+          this.captchaObj = captchaObj
+        }).onSuccess(() => {
+          const e = this.currentInfo ? 'email': 'weixin'
+          this[e] = true
+        })
+      })
     }
   },
   watch: {
@@ -420,6 +450,7 @@ export default {
 
         tag(that.screenWidth);
       })();
+    this.initCaptcha()
   },
   data() {
     return {
@@ -581,7 +612,11 @@ export default {
           href1: "https://baidu.com"
         },
         buttonIcon: link
-      }
+      },
+      email: false,
+      weixin: false,
+      captchaObj: null,
+      currentInfo: false
     };
   }
 };
@@ -1249,12 +1284,10 @@ export default {
 
             .mail {
               transition: all 0.3s ease;
-              /* &:hover {
+              &:hover {
                 filter: brightness(1.05);
-                i {
-                  filter: contrast(2);
-                }
-              } */
+                cursor: pointer;
+              } 
               i {
                 width: 16px;
                 height: 16px;
@@ -1269,16 +1302,10 @@ export default {
             .wechat {
               position: relative;
               transition: all 0.3s ease;
-              /* &:hover {
+               &:hover {
                 filter: brightness(1.1);
-                &::before {
-                  opacity: 1;
-                }
-
-                i {
-                  filter: contrast(2);
-                }
-              } */
+                cursor: pointer;
+              }
               i {
                 width: 16px;
                 height: 16px;
