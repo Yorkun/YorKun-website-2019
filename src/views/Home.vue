@@ -547,7 +547,7 @@ export default {
       cnXsCardData: xsCardData.cn,
       xsCardData,
       // 首页语言切换 En:F Cn:T
-      isActive: 0,
+      isActive: true,
       // 首页语言切换
       footerTextData,
       cnFooterLinkText: footerTextData.cn,
