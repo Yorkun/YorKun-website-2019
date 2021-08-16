@@ -354,6 +354,7 @@ export default {
       window.initGeetest4({
         captchaId: 'c366396a62477f4def90c18b075983ad',
         product: 'bind',
+        bgColor: '#00000099',
       }, (captchaObj) => {
         // captcha为验证码实例
         captchaObj.onReady(() => {
