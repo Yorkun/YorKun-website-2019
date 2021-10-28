@@ -1,9 +1,9 @@
 <template>
   <div class="defaultButton" :style="'background-color:' + btnColor">
-    <router-link :to='href'>
+    <a :href='href'>
       {{buttonText}}
       <img :src="btnIcon" id="defaultButton-icon" alt />
-    </router-link>
+    </a>
     <!-- <loading :isMotion="isMotion"/> -->
   </div>
 </template>
@@ -22,11 +22,11 @@ export default {
   //     isMotion: false
   //   }},
   mounted() {
-    const icon = document.getElementById('defaultButton-icon');
+    // const icon = document.getElementById('defaultButton-icon');
 
-    if (this.btnIcon === '') {
-      icon.style.display = 'none';
-    }
+    // if (this.btnIcon === '') {
+    //   icon.style.display = 'none';
+    // }
   },
   methods: {
     // loading() {

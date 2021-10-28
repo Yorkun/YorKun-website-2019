@@ -55,15 +55,15 @@
             }
         }
     }
-
-    #banana {
-        ::v-deep .ghostButton {
-            &::after {
-                right: 31px !important;
-                top: 15px !important;
-            }
-        }
+    ::v-deep .banana_1 .ghostButton::after {
+        right: 33px !important;
+        top: 15px !important;
     }
+    ::v-deep .banana_0 .ghostButton::after {
+        right: 15px !important;
+        top: 15px !important;
+    }
+
 
     #about {
         h1 {

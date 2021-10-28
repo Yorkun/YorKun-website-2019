@@ -197,7 +197,7 @@
           }
         }
 
-        &:nth-of-type(2) {
+        &:nth-of-type(4) {
           height: 560px;
 
           .des {
@@ -242,7 +242,7 @@
           }
         }
 
-        &:nth-of-type(3) {
+        &:nth-of-type(5) {
           height: 580px;
 
           .des {
@@ -272,7 +272,7 @@
           }
         }
 
-        &:nth-of-type(4) {
+        &:nth-of-type(6) {
           height: 600px;
 
           .des {
@@ -324,7 +324,7 @@
           }
         }
 
-        &:nth-of-type(5) {
+        &:nth-of-type(7) {
           height: 600px;
 
           .des {
@@ -376,7 +376,7 @@
           }
         }
 
-        &:nth-of-type(6) {
+        &:nth-of-type(3) {
           height: 600px;
 
           .des {
@@ -401,54 +401,33 @@
             }
           }
         }
-
-        &:nth-of-type(7) {
-          height: 660px;
+        &:nth-of-type(2) {
+          height: 600px;
 
           .des {
-            top: -170px;
+            top: -120px;
 
             span {
               font-size: 12px;
               line-height: 16px;
-              width: 85% !important;
+              width: 90% !important;
               margin-bottom: 24px;
-            }
-
-            p,
-            h1 {
-              word-break: normal;
-
-              z-index: 100;
-            }
-
-            .ghostButton {
-              position: relative;
-              top: 80px;
-
-              &::before {
-                right: 23px;
-                top: -68px;
-              }
             }
           }
 
           .img-area {
             width: 100%;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+            bottom: -10px;
 
             img {
+              height: 320px;
               position: relative;
-              width: 95%;
-              height: auto;
-              bottom: 28px;
-              margin-right: 0;
+              left: -40px;
             }
           }
         }
+
+      
 
         .img-area {
           bottom: 0;
@@ -474,9 +453,12 @@
     }
 
     .smallCards {
-      flex-direction: column;
+      // flex-direction: column;
 
-
+      ::v-deep .card2 {
+        width: 100%;
+        
+      }
       ::v-deep .smallCard2 {
         width: 100%;
         margin-right: 0;
@@ -486,17 +468,30 @@
         .bgImg {
           left: 12px;
           top: 12px;
-        }
-
-        .cover {
-          margin-right: 100px;
+          width: 100px;
         }
 
         &:last-child {
           margin-top: 10px;
           .cover {
-            transform: scale(0.7);
+            transform: scale(0.6);
+            right: -99px;
           }
+        }
+      }
+      .card2:last-child {
+        ::v-deep .cover {
+          top: 86px;
+          left: -45px;
+          right: auto;
+          width: 650px;
+        }
+        ::v-deep .bgImg {
+          right: 40px;
+          top: 20px;
+          left: auto;
+          height: 99px;
+          width: auto;
         }
       }
 

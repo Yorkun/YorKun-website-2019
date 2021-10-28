@@ -74,6 +74,7 @@
         :isTag="avatarCard.isTag"
         :bgImg="avatarCard.bgImg"
         :profile="avatarCard.profile"
+        class="card-profile"
       >
         <h1>{{ cnMeDes[0] }}</h1>
         <p class="mb-40">{{ cnMeDes[1] }}</p>
@@ -82,8 +83,35 @@
       </avatarCard>
       <span id="project"></span>
       <card
+       v-for="(banana, i) in cnBanana"
+        :key="`${i}_bannernormal`"
+        :title="banana.title"
+        :cardLogo="banana.cardLogo"
+        :des="banana.des"
+        :cardColor="banana.cardColor"
+        :tag="banana.tag"
+        :isTagWhite="banana.isTagWhite"
+        :tagColor="banana.tagColor"
+        :isTitle="banana.isTitle"
+        :isButton="banana.isButton"
+        :isDes="banana.isDes"
+        :isBlack="banana.isBlack"
+        :isWhiteBotton="banana.isWhiteBotton"
+        :isTag="banana.isTag"
+        :bgImg="banana.bgImg"
+        :isGhostButton="banana.isGhostButton"
+        :btnIconD="banana.btnIconD"
+        :btnIconG="banana.btnIconG"
+        :buttonTextD="banana.buttonTextD"
+        :buttonTextG="banana.buttonTextG"
+        :hrefD="banana.hrefD"
+        :hrefG="banana.hrefG"
+        :class="`banana_${i}`"
+        id="banana"
+      />
+      <card
         v-for="(item, i) in cards"
-        :key="i"
+        :key="`${i}_banner`"
         :title="cards[i].title"
         :cardLogo="cards[i].cardLogo"
         :des="cards[i].des"
@@ -105,32 +133,9 @@
         :buttonTextG="cards[i].buttonTextG"
         :hrefD="cards[i].hrefD"
         :hrefG="cards[i].hrefG"
+        :class="`card_banner_${i}`"
       />
-      <card
-        :title="cnBanana.title"
-        :cardLogo="cnBanana.cardLogo"
-        :des="cnBanana.des"
-        :cardColor="cnBanana.cardColor"
-        :tag="cnBanana.tag"
-        :isTagWhite="cnBanana.isTagWhite"
-        :tagColor="cnBanana.tagColor"
-        :isTitle="cnBanana.isTitle"
-        :isButton="cnBanana.isButton"
-        :isDes="cnBanana.isDes"
-        :isBlack="cnBanana.isBlack"
-        :isWhiteBotton="cnBanana.isWhiteBotton"
-        :isTag="cnBanana.isTag"
-        :bgImg="cnBanana.bgImg"
-        :isGhostButton="cnBanana.isGhostButton"
-        :btnIconD="cnBanana.btnIconD"
-        :btnIconG="cnBanana.btnIconG"
-        :buttonTextD="cnBanana.buttonTextD"
-        :buttonTextG="cnBanana.buttonTextG"
-        :hrefD="cnBanana.hrefD"
-        :hrefG="cnBanana.hrefG"
-        id="banana"
-      />
-      <card
+      <!-- <card
         :title="character.en.title"
         :cardLogo="character.en.cardLogo"
         :des="character.en.des"
@@ -153,7 +158,7 @@
         :hrefD="character.en.hrefD"
         :hrefG="character.en.hrefG"
         id="character"
-      />
+      /> -->
       <span id="works"></span>
 
       <div class="smallCards">
@@ -179,6 +184,7 @@
           :bgImg="cnSmallCard2[j].bgImg"
           :cardBg="cnSmallCard2[j].cardBg"
           :cover="cnSmallCard2[j].cover"
+          :link="cnSmallCard2[j].link"
         />
       </div>
 
@@ -212,7 +218,7 @@
           :link="cnXsCardData[i].link"
         />
       </div>
-      <div class="info" id="about">
+      <div class="info" id="about"> 
         <div class="info_about">
           <h1>{{ cnInfo.about[0] }}</h1>
           <div class="des" v-html="cnInfo.about[1]"></div>
@@ -228,18 +234,18 @@
               <a href="https://www.behance.net/yorkun" target="_blank"></a>
             </div>
             <div class="contact-wrap">
-              <div class="mail">
+              <div class="mail" @click="btnClick('email')" :class="{'default-cur': email}">
                 <i></i>
-                <p @click="btnClick('email')">
+                <p>
                   <transition name="fade">
                      <span v-if="email" key="email">yorkuncheng@gmail.com</span>
                      <span v-else key="text">{{isEn? 'Show My E-mail' : '查看我的邮箱'}}</span>
                   </transition>
                 </p>
               </div>
-              <div class="wechat">
+              <div class="wechat" @click="btnClick('weixin')" :class="{'default-cur': weixin}">
                 <i></i>
-                <p @click="btnClick('weixin')">
+                <p>
                   <transition name="fade">
                      <span v-if="weixin" key="weixin">yorkun-cheng</span>
                      <span v-else key="text2">{{isEn? 'Show My WeChat' : '查看我的微信'}}</span>
@@ -291,6 +297,7 @@ import character_banner from "../assets/character_banner.png";
 import character_logo from "../assets/character_logo.svg";
 import sketchFigma_icon from "../assets/sketchFigma_icon.png";
 
+
 export default {
   name: "home",
   props: ["buttonIcon"],
@@ -304,7 +311,7 @@ export default {
     xsCard,
     globalFooter,
     top,
-    avatarCard
+    avatarCard,
   },
   methods: {
     langSwitch() {
@@ -340,14 +347,14 @@ export default {
         this.cnMotionCardData = motionCardData.cn;
         this.cnXsCardData = this.xsCardData.cn;
         this.cnFooterLinkText = this.footerTextData.cn;
-        this.character.en = this.character.cn;
+        // this.character.en = this.character.cn;
         this.isEn = false;
       }
     },
     // 按钮点击获取信息
     btnClick (e) {
       this.currentInfo =  e === 'email'
-      this.captchaObj && this.captchaObj.showBox()
+      !this[e] && this.captchaObj && this.captchaObj.showBox()
     },
     // 初始化验证码
     initCaptcha (e) {
@@ -384,6 +391,12 @@ export default {
   },
   mounted() {
     // this.isActive = window.localStorage.getItem("lang");
+    const lang = navigator.language.indexOf('zh');
+    if (lang !== -1) {
+      this.isActive = 1;
+    } else {
+      this.isActive = 0;
+    }
     this.ok = true;
     this.langSwitch();
     const nav = document.getElementById("nav-1");
@@ -450,7 +463,7 @@ export default {
 
         tag(that.screenWidth);
       })();
-    this.initCaptcha()
+    this.initCaptcha();
   },
   data() {
     return {
@@ -479,27 +492,6 @@ export default {
       },
       character: {
         cn: {
-          title: "Gee me",
-          cardLogo: character_logo,
-          des:
-            "GEE! ME 是一套扁平卡通人物合集，可运用在各种设计项目中,  100 组预设形象以及超过 400 个头部、穿着部件，任意搭配。",
-          cardColor: " #F5F6F8",
-          tag: "主题/表情设计",
-          buttonTextD: "",
-          buttonTextG: "前往网站",
-          isTagWhite: true,
-          tagColor: "rgba(0,0,0,0.08)",
-          isButton: false,
-          btnIconD: "",
-          btnIconG: link_icon_b,
-          isGhostButton: true,
-          isTitle: true,
-          isDes: true,
-          isBlack: true,
-          isWhiteBotton: true,
-          isTag: true,
-          bgImg: character_banner,
-          hrefG: "https://geeme.now.sh/"
         },
         en: {
           title: "小蕉 BANANA",
@@ -616,7 +608,7 @@ export default {
       email: false,
       weixin: false,
       captchaObj: null,
-      currentInfo: false
+      currentInfo: false,
     };
   }
 };
@@ -974,7 +966,7 @@ export default {
 
     /*********** card btn hover  **************/
     ::v-deep .card {
-      &:nth-of-type(2) {
+      &:nth-of-type(3) {
         .defaultButton {
           &:hover {
             background-color: $white;
@@ -986,41 +978,33 @@ export default {
         .ghostButton {
           &:hover {
             filter: invert(1);
-            border-color: white;
-          }
-        }
-      }
-      &:nth-of-type(3) {
-        span {
-          color: rgba(255, 255, 255, 0.76) !important;
-        }
-
-        .defaultButton {
-          &:hover {
-            color: $blue;
-            border: 1px solid white;
-            background-color: $blue !important;
-            color: white !important;
+            // border-color: white;
           }
         }
       }
       &:nth-of-type(4) {
+        span {
+          // color: rgba(255, 255, 255, 0.76) !important;
+        }
+
         .defaultButton {
           &:hover {
             background-color: $white;
             color: $blue;
-            border: 1px solid $blue;
+            border: 1px solid $blue
           }
         }
       }
       &:nth-of-type(5) {
-        .des {
-          img {
-            width: 78px;
-            height: 40px;
+        .defaultButton {
+          &:hover {
+            border: 1px solid #fff;
+            background-color: #3973ff!important;
+            color: #fff!important
           }
         }
-
+      }
+      &:nth-of-type(6) {
         .ghostButton {
           background: #eeeff0;
         }
@@ -1035,20 +1019,13 @@ export default {
     }
 
     .card {
-      &:nth-of-type(2) {
+      &:nth-of-type(3) {
         &::v-deep .des {
           span {
             width: auto;
           }
           img {
             height: 40px;
-          }
-        }
-      }
-      &:nth-of-type(3) {
-        &::v-deep .defaultButton {
-          img {
-            display: none;
           }
         }
       }
@@ -1059,45 +1036,27 @@ export default {
           }
         }
       }
+      &.card_banner_1 {
+        &::v-deep .defaultButton {
+          margin-left: 0;
+          img {
+            display: none;
+          }
+        }
+      }
 
-      &:nth-of-type(5) {
+      &.card_banner_2 {
         ::v-deep .des {
           span {
             width: 400px;
           }
         }
-      }
-
-      &:nth-of-type(6) {
-        &::v-deep .des {
-          img {
-            height: 60px;
-          }
-
-          span {
-            color: rgba(255, 255, 255, 0.9) !important;
-          }
-
-          .defaultButton {
-            background-color: #ffde4a !important;
-            color: #af6e13 !important;
-          }
-
-          .ghostButton {
-            background-color: rgb(252, 133, 161);
-            border-color: white;
-            color: white;
-
-            .ghostButton-icon {
-              margin-left: 8px;
-              width: 14px !important;
-              height: 14px !important;
-            }
-          }
+        ::v-deep .defaultButton {
+          margin-left: 0;
         }
       }
 
-      &:nth-of-type(7) {
+      &:nth-of-type(2) {
         ::v-deep .des {
           img {
             width: 170px;
@@ -1108,6 +1067,20 @@ export default {
             width: 440px !important;
           }
         }
+      }
+      &.card-profile {
+        ::v-deep .wrap .title {
+          color: white !important
+        }
+        ::v-deep a.ghostButton:hover .wrap .title{
+            color: #2C313E !important;
+        }
+      }
+      &.card_banner_3 {
+        // ::v-deep .ghostButton {
+        //   border-color: #4F46E5;
+        //   color:#4F46E5
+        // }
       }
     }
 
@@ -1284,10 +1257,10 @@ export default {
 
             .mail {
               transition: all 0.3s ease;
+              cursor: pointer;
               &:hover {
                 filter: brightness(1.05);
-                cursor: pointer;
-              } 
+              }
               i {
                 width: 16px;
                 height: 16px;
@@ -1302,9 +1275,9 @@ export default {
             .wechat {
               position: relative;
               transition: all 0.3s ease;
+              cursor: pointer;
                &:hover {
                 filter: brightness(1.1);
-                cursor: pointer;
               }
               i {
                 width: 16px;
@@ -1316,6 +1289,9 @@ export default {
                 background-size: 16px 16px;
                 transition: all 0.3s ease;
               }
+            }
+            .default-cur {
+              cursor: default;
             }
           }
         }
@@ -1339,87 +1315,145 @@ export default {
           width: 420px;
         }
       }
+    }
+  }
+  ::v-deep .banana_0 {
       .defaultButton {
+        background-color: white !important;
         img {
-          display: none;
+          display: inline-block;
+          width: 10px !important;
         }
-        &:hover {
-          color: #ffffff !important;
-          background: #fc85a1 !important;
-          border-color: white !important;
-        }
-      }
-      .ghostButton {
-        position: relative;
-        &:hover {
-          background-color: white !important;
-          color: #fb85a1 !important;
-          filter: none !important;
-
-          img {
-            opacity: 0;
+          position: relative;
+          border: 1px solid transparent;
+          &:hover {
+            filter: invert(1)
           }
-          &::before {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+        }
+        .ghostButton {
+          position: relative;
+          color: #FF7A00;
+          border: 1px solid #FF7A00;
+          background-color: transparent;
+          &:hover {
+            background-color: #FF7A00 !important;
+            filter: none !important;
+            color: white;
+
+            img {
+              opacity: 0;
+            }
+            &::before {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+            &::after {
+              opacity: 1;
+            }
           }
           &::after {
-            opacity: 1;
+            right: 23px;
+            top: 15px;
+            content: '';
+            opacity: 0;
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 14px;
+            right: 22px;
+            background-image: url('../assets/er_code.svg');
+            background-size: cover;
+            transition: all 0.3s ease;
+          }
+          &::before {
+            content: '';
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: -145px;
+            left: 0px;
+            top: -148px;
+            display: block;
+            width: 136px;
+            height: 141px;
+            background-image: url('../assets/index/weixin_ercode.png');
+            background-size: 100% 100%;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-6px);
           }
         }
-        &::after {
-          content: '';
-          opacity: 0;
-          position: absolute;
-          display: block;
-          width: 14px;
-          height: 14px;
-          right: 22px;
-          background-image: url('../assets/index/reweima_icon-2.svg');
-          background-size: cover;
-          transition: all 0.3s ease;
+  }
+  ::v-deep .banana_1 {
+     .defaultButton {
+          img {
+            display: none;
+          }
+          &:hover {
+            border: 1px solid #fff !important;
+            background-color: rgb(252, 133, 161)!important;
+            color: #fff!important;
+          }
         }
-        &::before {
-          content: '';
-          visibility: hidden;
-          opacity: 0;
-          position: absolute;
-          top: -145px;
-          left: 0px;
-          top: -148px;
-          display: block;
-          width: 136px;
-          height: 141px;
-          background-image: url('../assets/index/reweima_hover.png');
-          background-size: 100% 100%;
-          transition: all 0.3s ease-in-out;
-          transform: translateY(-6px);
+        .ghostButton {
+          position: relative;
+          color: white;
+          background-color: transparent;
+          border: 1px solid white;
+          &:hover {
+            background-color: #FFDE4A !important;
+            filter: none !important;
+            border-color: transparent;
+            color: #B76011;
+
+            img {
+              opacity: 0;
+            }
+            &::before {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+            &::after {
+              opacity: 1;
+            }
+          }
+          &::after {
+            content: '';
+            opacity: 0;
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 14px;
+            right: 24px;
+            top:15px;
+            background-image: url('../assets/index/reweima_icon-2.svg');
+            background-size: cover;
+            transition: all 0.3s ease;
+          }
+          &::before {
+            content: '';
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: -145px;
+            left: 0px;
+            top: -148px;
+            display: block;
+            width: 136px;
+            height: 141px;
+            background-image: url('../assets/index/reweima_hover.png');
+            background-size: 100% 100%;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-6px);
+          }
         }
+    .des {
+      span {
+        color: rgba(255, 255, 255, 0.8)!important
       }
     }
   }
-
-  /* #cardMe {
-    ::v-deep .card_wrap {
-      .img-area {
-        img {
-          opacity: 0;
-          transform: translateX(80px);
-          animation: showMe 1s ease forwards;
-
-          @keyframes showMe {
-            to {
-              opacity: 1;
-          transform: translateX(0);
-
-            }
-          }
-        }
-      }
-    }
-  } */
-
   #project {
     opacity: 0;
     position: relative;
@@ -1433,13 +1467,21 @@ export default {
   }
 }
 
-.smallCard2 {
+.card2 {
   &:last-child {
     ::v-deep .cover {
-      height: 615px;
       position: relative;
-      top: 14px;
-      left: 27px;
+      top: 86px;
+      left: -45px;
+      right: auto;
+      width: 650px;
+    }
+    ::v-deep .bgImg {
+      right: 40px;
+      top: 50px;
+      left: auto;
+      height: 99px;
+      width: auto;
     }
   }
 }

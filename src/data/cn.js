@@ -21,8 +21,8 @@ import captcha_logo from '../assets/index/captcha_logo.svg';
 import wangguan_logo from '../assets/index/wangguan_logo.svg';
 import banana_logo from '../assets/index/banana_logo.svg';
 import animation from '../assets/index/animation.png';
-import yoke_logo from '../assets/yoke_logo.svg';
-import yoke_banner from '../assets/yoke_banner.png';
+import figma_logo from '../assets/figma_logo.png';
+import figma_banner from '../assets/figma_bg.png';
 
 export default [
   {
@@ -80,12 +80,12 @@ export default [
     cardColor: ' ',
     tag: 'App UI 设计',
     buttonTextD: '项目详情',
-    buttonTextG: ' ',
+    buttonTextG: '',
     isTagWhite: false,
     tagColor: 'rgba(0,0,0,0.08)',
     isButton: true,
     btnIconD: '',
-    btnIconG: '',
+    btnIconG: link_icon_b,
     isGhostButton: false,
     isTitle: true,
     isDes: true,
@@ -96,12 +96,12 @@ export default [
     hrefD: '/onelogin',
   },
   {
-    title: 'APP 一键登录',
-    cardLogo: yoke_logo,
+    title: 'Figma Cool',
+    cardLogo: figma_logo,
     des:
-      '根据自己平时的工作习惯，整合了一些设计师常用的搜索网站。能同时打开多个网站的搜索结果，快速寻找灵感。',
-    cardColor: '#EEEFF0',
-    tag: 'App UI 设计',
+      'Figma 中文社区：我们致力于在国内推广 Figma，这里有我们开发的 Figma 中文版、设计资源精选、插件合集和 Figma 文档。',
+    cardColor: '#F4F6F7',
+    tag: 'Figma设计',
     buttonTextD: '',
     buttonTextG: '前往网站',
     isTagWhite: false,
@@ -115,7 +115,7 @@ export default [
     isBlack: false,
     isWhiteBotton: false,
     isTag: true,
-    bgImg: yoke_banner,
-    hrefG: 'https://yoke.now.sh',
+    bgImg: figma_banner,
+    hrefG: 'https://www.figma.cool/',
   },
 ];

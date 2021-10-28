@@ -23,8 +23,8 @@ import captcha_logo_en from '../assets/index/captcha_logo_en.svg';
 import wangguan_logo from '../assets/index/wangguan_logo.svg';
 import banana_logo from '../assets/index/banana_logo.svg';
 import animation from '../assets/index/animation.png';
-import yoke_logo from '../assets/yoke_logo.svg';
-import yoke_banner from '../assets/yoke_banner.png';
+import figma_logo from '../assets/figma_logo.png';
+import figma_banner from '../assets/figma_bg.png';
 
 export default [
   {
@@ -98,12 +98,11 @@ export default [
     hrefD: '/onelogin',
   },
   {
-    title: 'APP 一键登录',
-    cardLogo: yoke_logo,
-    des:
-      'According to my work habits, I designed a quick search tool for designers, you can search multiple websites at the same time.',
-    cardColor: '#EEEFF0',
-    tag: 'App UI Design',
+    title: 'Figma Cool',
+    cardLogo: figma_logo,
+    des: 'Figma Chinese Community. We are committed to promoting Figma in China. Here are the Chinese version of Figma, selection of design resources, collection of plug-ins and Figma documents.',
+    cardColor: '#F4F6F7',
+    tag: 'Figma Design',
     buttonTextD: '',
     buttonTextG: 'See the live',
     isTagWhite: false,
@@ -117,7 +116,7 @@ export default [
     isBlack: false,
     isWhiteBotton: false,
     isTag: true,
-    bgImg: yoke_banner,
-    hrefG: 'https://yoke.now.sh',
+    bgImg: figma_banner,
+    hrefG: 'https://www.figma.cool',
   },
 ];

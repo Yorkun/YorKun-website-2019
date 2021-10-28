@@ -19,13 +19,12 @@
       <div class="img-area" :style="`background-image: url(${bgImg})`">
         <div class="avatar-content">
           <img src="../assets/index/avatar.png" alt="avatar" class="avatar" />
-          <button class="ghostButton" href="https://test.com" target="_blank" disabled="disabled">
+          <a class="ghostButton" href="https://www.figma.com/file/YvyB59Z0UqhcerohcudETZ/YorKun-s-Profile?node-id=0%3A1" target="_blank">
             <div class="wrap">
-              <p>{{profile}}</p>
-              <img class="link-icon" src="../assets/index/link_icon_w.svg" />
-              <img class="lock-icon" src="../assets/index/lock.svg" />
+              <span class="title">{{profile}}</span>
+              <span class="link-icon"></span>
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -206,7 +205,6 @@ export default {
   border: 1px solid #ffffff;
   background-color: transparent;
   transition: all 0.3s ease;
-  cursor: default;
   @include font(14px, $font-color-black-1, 400);
 
   .wrap {
@@ -219,15 +217,15 @@ export default {
       font-size: 14px;
       line-height: 20px;
       text-align: center;
-      color: #ffffff !important ;
+      color: #fff;
       transition: all 0.2s ease;
     }
-  }
-
-  .lock-icon {
-    position: absolute;
-    opacity: 0;
-    transform-origin: top;
+    .link-icon {
+      background-image: url('../assets/index/link_icon_w.svg');
+      width: 10px;
+      height: 10px;
+      background-repeat: no-repeat;
+    }
   }
 
   /* 
@@ -241,42 +239,12 @@ export default {
   } */
 
   &:hover {
-    background: rgba(255, 255, 255, 0.4);
-
-    p,
-    .link-icon {
-      opacity: 0;
+    background: white;
+    p {
+      color: rgba(23, 23, 23, 1) !important
     }
-
-    .lock-icon {
-      opacity: 1;
-      animation: headShake 1s ease-in-out forwards;
-
-      @keyframes headShake {
-        0% {
-          transform: translateX(0);
-        }
-
-        6.5% {
-          transform: translateX(0) rotateZ(-19deg);
-        }
-
-        18.5% {
-          transform: translateX(0) rotateZ(17deg);
-        }
-
-        31.5% {
-          transform: translateX(0) rotateZ(-15deg);
-        }
-
-        43.5% {
-          transform: translateX(0) rotateZ(13deg);
-        }
-
-        50% {
-          transform: translateX(0);
-        }
-      }
+    .link-icon {
+      background-image: url('../assets/index/link_icon_b.svg');
     }
   }
 
@@ -290,8 +258,8 @@ export default {
       align-items: center;
 
       .ghostButton-icon {
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
         margin-left: 5px;
         position: relative;
         top: 1px;

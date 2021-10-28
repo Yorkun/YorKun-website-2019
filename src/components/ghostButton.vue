@@ -58,11 +58,13 @@ export default {
       align-items: center;
 
       .ghostButton-icon {
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
         margin-left: 5px;
         position: relative;
         top: 1px;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }

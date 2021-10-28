@@ -1,8 +1,10 @@
 <template>
-  <div class="smallCard2" :style="`background: url(${cardBg})`">
+<a :href="link" target="_blank" class="card2">
+  <div class="smallCard2" :style="`background: ${cardBg}`">
     <img :src="bgImg" class="bgImg" />
     <img :src="cover" class="cover" />
   </div>
+</a>
 </template>
 
 <script>
@@ -16,7 +18,8 @@ export default {
     tag: String,
     tagColor: String,
     isTag: Boolean,
-    cover: String
+    cover: String,
+    link: String,
   }
 };
 </script>
@@ -37,7 +40,7 @@ export default {
   width: 590px;
   height: 400px;
   border-radius: 10px;
-  background-color: #594f76 !important;
+  // background-color: #594f76 !important;
   overflow: hidden;
   margin-top: 10px;
   transition: all 0.3s ease;
@@ -45,7 +48,6 @@ export default {
   transform: translateY(10%);
   animation: showCard 1s ease forwards;
   @include flex-all-center;
-  cursor: default;
   background-size: cover !important;
 
   @keyframes showCard {
@@ -94,15 +96,18 @@ export default {
   .bgImg {
     z-index: 9;
     position: absolute;
-    height: 90px;
-    left: 30px;
-    top: 30px;
+    left: 50px;
+    top: 50px;
     transition: all 0.3s ease;
+    width: 174px;
   }
 
   .cover {
-    height: 142%;
     transition: all 0.3s ease;
+    width: 446px;
+    position: absolute;
+    right: -88px;
+    top: 50px;
   }
 
   .centerImg {

@@ -15,17 +15,17 @@
         <img v-if="isTitle" :src="cardLogo" />
         <span v-if="isDes">{{des}}</span>
         <div class="btn-wrap">
+           <ghostButton
+            :buttonText="buttonTextG"
+            v-if="isGhostButton"
+            :buttonIcon="btnIconG"
+            :href="hrefG"
+          />
           <defaultButton
             :buttonText="buttonTextD"
             v-if="isButton"
             :btnIcon="btnIconD"
             :href="hrefD"
-          />
-          <ghostButton
-            :buttonText="buttonTextG"
-            v-if="isGhostButton"
-            :buttonIcon="btnIconG"
-            :href="hrefG"
           />
         </div>
         <slot></slot>
@@ -146,7 +146,7 @@ export default {
 
       .btn-wrap {
         .defaultButton {
-          margin-right: 20px;
+          margin-left: 20px;
         }
         @include flex-all-center {
           align-items: flex-start;
