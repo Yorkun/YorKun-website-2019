@@ -227,11 +227,14 @@
           <h1>{{ cnInfo.contact.title }}</h1>
           <div class="social">
             <div class="links">
+              <a href="https://www.figma.com/@yorkun" target="_blank"></a>
               <a href="https://weibo.com/chengyork" target="_blank"></a>
               <a href="https://www.instagram.com/yorkun_cheng/" target="_blank"></a>
               <a href="https://github.com/Yorkun" target="_blank"></a>
               <a href="https://unsplash.com/@yorkun" target="_blank"></a>
-              <a href="https://www.behance.net/yorkun" target="_blank"></a>
+              <!-- <a href="https://www.behance.net/yorkun" target="_blank"></a> -->
+              
+
             </div>
             <div class="contact-wrap">
               <div class="mail" @click="btnClick('email')" :class="{'default-cur': email}">
@@ -361,6 +364,7 @@ export default {
       window.initGeetest4({
         captchaId: 'c366396a62477f4def90c18b075983ad',
         product: 'bind',
+        bgColor: '#00000099',
       }, (captchaObj) => {
         // captcha为验证码实例
         captchaObj.onReady(() => {
@@ -539,7 +543,7 @@ export default {
       cnXsCardData: xsCardData.cn,
       xsCardData,
       // 首页语言切换 En:F Cn:T
-      isActive: 0,
+      isActive: true,
       // 首页语言切换
       footerTextData,
       cnFooterLinkText: footerTextData.cn,
@@ -1216,22 +1220,27 @@ export default {
               &:hover {
                 filter: contrast(2);
               }
-
+ 
               &:nth-of-type(1) {
-                background-image: url('../assets/index/links/weibo_icon.svg');
+                background-image: url('../assets/index/links/figma_icon.svg');
               }
               &:nth-of-type(2) {
-                background-image: url('../assets/index/links/ig_icon.svg');
+                background-image: url('../assets/index/links/weibo_icon.svg');
               }
               &:nth-of-type(3) {
-                background-image: url('../assets/index/links/github_icon.svg');
+                background-image: url('../assets/index/links/ig_icon.svg');
               }
               &:nth-of-type(4) {
-                background-image: url('../assets/index/links/unsplash_icon.svg');
+                background-image: url('../assets/index/links/github_icon.svg');
               }
               &:nth-of-type(5) {
-                background-image: url('../assets/index/links/behance_icon.svg');
+                background-image: url('../assets/index/links/unsplash_icon.svg');
               }
+              // &:nth-of-type(6) {
+              //   background-image: url('../assets/index/links/behance_icon.svg');
+              // }
+          
+              
             }
           }
 
