@@ -31,8 +31,13 @@
   }
 }
 
-.en #banana ::v-deep .banana_0::after {
+.en ::v-deep .banana_1 .ghostButton::after {
   right: 33px !important;
+  top: 15px !important;
+}
+
+.en ::v-deep .banana_0 .ghostButton::after {
+  right: 15px !important;
   top: 15px !important;
 }
 

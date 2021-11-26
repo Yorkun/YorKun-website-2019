@@ -2,10 +2,9 @@
   <div class="globalFooter">
     <div class="globalFooter_links">
       <span>Links:</span>
-      <a href="https://figma.cool/" target="_blank">Figma 中文社区</a>
-      <a href="https://www.figma.com/@figmacool" target="_blank">@Figma.Cool</a>
+      <a href="https://figma.cool/" target="_blank">Figma.Cool</a>
+      <a href="https://look.yorkun.com/" target="_blank">Quick Look</a>
       <a href="https://yancymin.design" target="_blank">Yancy Min</a>
-      <!-- <a href="https://www.liuchangyi.com/" target="_blank">Charlie Liu</a> -->
       <!-- <a href="https://cn.figma.cool" target="_blank">Figma 汉化插件</a> -->
       <!-- <a href="http://yorkunpic.lofter.com" target="_blank">
         {{footerLinkText}}

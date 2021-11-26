@@ -170,92 +170,28 @@
     background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(20, 21, 22, 0)), to(#141516));
     background-image: linear-gradient(bottom, rgba(20, 21, 22, 0) 0%, #141516 100%);
   }
-  #top .container ::v-deep .card:nth-of-type(2) {
+  #top .container ::v-deep .card:nth-of-type(4) {
     height: 560px;
   }
-  #top .container ::v-deep .card:nth-of-type(2) .des {
-    top: -120px;
-  }
-  #top .container ::v-deep .card:nth-of-type(2) .des img {
-    height: 32px;
-  }
-  #top .container ::v-deep .card:nth-of-type(2) .des span {
-    font-size: 12px;
-    line-height: 16px;
-    margin-bottom: 24px;
-    width: 90%;
-  }
-  #top .container ::v-deep .card:nth-of-type(2) .des p,
-  #top .container ::v-deep .card:nth-of-type(2) .des h1 {
-    word-break: normal;
-    z-index: 100;
-  }
-  #top .container ::v-deep .card:nth-of-type(2) .img-area {
-    bottom: -100px;
-  }
-  #top .container ::v-deep .card:nth-of-type(2) .img-area::after {
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    content: "";
-    display: block;
-    width: 120%;
-    height: 160px;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(245, 246, 248, 0)), to(#f5f6f8));
-    background-image: linear-gradient(bottom, rgba(245, 246, 248, 0) 0%, #f5f6f8 100%);
-  }
-  #top .container ::v-deep .card:nth-of-type(3) {
-    height: 580px;
-  }
-  #top .container ::v-deep .card:nth-of-type(3) .des {
-    top: -120px;
-  }
-  #top .container ::v-deep .card:nth-of-type(3) .des span {
-    font-size: 12px;
-    line-height: 16px;
-    width: 90%;
-    margin-bottom: 24px;
-  }
-  #top .container ::v-deep .card:nth-of-type(3) .defaultButton {
-    margin: 0;
-  }
-  #top .container ::v-deep .card:nth-of-type(3) .img-area {
-    width: 100%;
-    bottom: -20px;
-  }
-  #top .container ::v-deep .card:nth-of-type(3) .img-area img {
-    position: relative;
-    left: 32px;
-    height: 320px;
-  }
-  #top .container ::v-deep .card:nth-of-type(4) {
-    height: 600px;
-  }
   #top .container ::v-deep .card:nth-of-type(4) .des {
-    top: -130px;
+    top: -120px;
+  }
+  #top .container ::v-deep .card:nth-of-type(4) .des img {
+    height: 32px;
   }
   #top .container ::v-deep .card:nth-of-type(4) .des span {
     font-size: 12px;
     line-height: 16px;
-    width: 90%;
     margin-bottom: 24px;
+    width: 90%;
   }
   #top .container ::v-deep .card:nth-of-type(4) .des p,
   #top .container ::v-deep .card:nth-of-type(4) .des h1 {
     word-break: normal;
     z-index: 100;
   }
-  #top .container ::v-deep .card:nth-of-type(4) .des .defaultButton {
-    margin: 0;
-  }
   #top .container ::v-deep .card:nth-of-type(4) .img-area {
-    width: 100%;
-    bottom: -10px;
-  }
-  #top .container ::v-deep .card:nth-of-type(4) .img-area img {
-    height: 330px;
-    position: relative;
-    left: -60px;
+    bottom: -100px;
   }
   #top .container ::v-deep .card:nth-of-type(4) .img-area::after {
     position: absolute;
@@ -269,10 +205,10 @@
     background-image: linear-gradient(bottom, rgba(245, 246, 248, 0) 0%, #f5f6f8 100%);
   }
   #top .container ::v-deep .card:nth-of-type(5) {
-    height: 600px;
+    height: 580px;
   }
   #top .container ::v-deep .card:nth-of-type(5) .des {
-    top: -130px;
+    top: -120px;
   }
   #top .container ::v-deep .card:nth-of-type(5) .des span {
     font-size: 12px;
@@ -280,24 +216,88 @@
     width: 90%;
     margin-bottom: 24px;
   }
-  #top .container ::v-deep .card:nth-of-type(5) .des p,
-  #top .container ::v-deep .card:nth-of-type(5) .des h1 {
-    word-break: normal;
-    z-index: 100;
-  }
-  #top .container ::v-deep .card:nth-of-type(5) .des .defaultButton {
+  #top .container ::v-deep .card:nth-of-type(5) .defaultButton {
     margin: 0;
   }
   #top .container ::v-deep .card:nth-of-type(5) .img-area {
     width: 100%;
-    bottom: -10px;
+    bottom: -20px;
   }
   #top .container ::v-deep .card:nth-of-type(5) .img-area img {
+    position: relative;
+    left: 32px;
+    height: 320px;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) {
+    height: 600px;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .des {
+    top: -130px;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .des span {
+    font-size: 12px;
+    line-height: 16px;
+    width: 90%;
+    margin-bottom: 24px;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .des p,
+  #top .container ::v-deep .card:nth-of-type(6) .des h1 {
+    word-break: normal;
+    z-index: 100;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .des .defaultButton {
+    margin: 0;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .img-area {
+    width: 100%;
+    bottom: -10px;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .img-area img {
+    height: 330px;
+    position: relative;
+    left: -60px;
+  }
+  #top .container ::v-deep .card:nth-of-type(6) .img-area::after {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    content: "";
+    display: block;
+    width: 120%;
+    height: 160px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(245, 246, 248, 0)), to(#f5f6f8));
+    background-image: linear-gradient(bottom, rgba(245, 246, 248, 0) 0%, #f5f6f8 100%);
+  }
+  #top .container ::v-deep .card:nth-of-type(7) {
+    height: 600px;
+  }
+  #top .container ::v-deep .card:nth-of-type(7) .des {
+    top: -130px;
+  }
+  #top .container ::v-deep .card:nth-of-type(7) .des span {
+    font-size: 12px;
+    line-height: 16px;
+    width: 90%;
+    margin-bottom: 24px;
+  }
+  #top .container ::v-deep .card:nth-of-type(7) .des p,
+  #top .container ::v-deep .card:nth-of-type(7) .des h1 {
+    word-break: normal;
+    z-index: 100;
+  }
+  #top .container ::v-deep .card:nth-of-type(7) .des .defaultButton {
+    margin: 0;
+  }
+  #top .container ::v-deep .card:nth-of-type(7) .img-area {
+    width: 100%;
+    bottom: -10px;
+  }
+  #top .container ::v-deep .card:nth-of-type(7) .img-area img {
     height: 330px;
     position: relative;
     left: -91px;
   }
-  #top .container ::v-deep .card:nth-of-type(5) .img-area::after {
+  #top .container ::v-deep .card:nth-of-type(7) .img-area::after {
     position: absolute;
     top: 0;
     z-index: 2;
@@ -308,72 +308,47 @@
     background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(245, 246, 248, 0)), to(#eeeff0));
     background-image: linear-gradient(bottom, rgba(245, 246, 248, 0) 0%, #eeeff0 100%);
   }
-  #top .container ::v-deep .card:nth-of-type(6) {
+  #top .container ::v-deep .card:nth-of-type(3) {
     height: 600px;
   }
-  #top .container ::v-deep .card:nth-of-type(6) .des {
+  #top .container ::v-deep .card:nth-of-type(3) .des {
     top: -120px;
   }
-  #top .container ::v-deep .card:nth-of-type(6) .des span {
+  #top .container ::v-deep .card:nth-of-type(3) .des span {
     font-size: 12px;
     line-height: 16px;
     width: 90%;
     margin-bottom: 24px;
   }
-  #top .container ::v-deep .card:nth-of-type(6) .img-area {
+  #top .container ::v-deep .card:nth-of-type(3) .img-area {
     width: 100%;
     bottom: -10px;
   }
-  #top .container ::v-deep .card:nth-of-type(6) .img-area img {
+  #top .container ::v-deep .card:nth-of-type(3) .img-area img {
     height: 320px;
     position: relative;
     left: -40px;
   }
-  #top .container ::v-deep .card:nth-of-type(7) {
-    height: 660px;
+  #top .container ::v-deep .card:nth-of-type(2) {
+    height: 600px;
   }
-  #top .container ::v-deep .card:nth-of-type(7) .des {
-    top: -170px;
+  #top .container ::v-deep .card:nth-of-type(2) .des {
+    top: -120px;
   }
-  #top .container ::v-deep .card:nth-of-type(7) .des span {
+  #top .container ::v-deep .card:nth-of-type(2) .des span {
     font-size: 12px;
     line-height: 16px;
-    width: 85% !important;
+    width: 90% !important;
     margin-bottom: 24px;
   }
-  #top .container ::v-deep .card:nth-of-type(7) .des p,
-  #top .container ::v-deep .card:nth-of-type(7) .des h1 {
-    word-break: normal;
-    z-index: 100;
-  }
-  #top .container ::v-deep .card:nth-of-type(7) .des .ghostButton {
-    position: relative;
-    top: 80px;
-  }
-  #top .container ::v-deep .card:nth-of-type(7) .des .ghostButton::before {
-    right: 23px;
-    top: -68px;
-  }
-  #top .container ::v-deep .card:nth-of-type(7) .img-area {
+  #top .container ::v-deep .card:nth-of-type(2) .img-area {
     width: 100%;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    bottom: -10px;
   }
-  #top .container ::v-deep .card:nth-of-type(7) .img-area img {
+  #top .container ::v-deep .card:nth-of-type(2) .img-area img {
+    height: 320px;
     position: relative;
-    width: 95%;
-    height: auto;
-    bottom: 28px;
-    margin-right: 0;
+    left: -40px;
   }
   #top .container ::v-deep .card .img-area {
     bottom: 0;
@@ -395,11 +370,8 @@
   #top .smallCard2 {
     margin-top: 0;
   }
-  #top .smallCards {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  #top .smallCards ::v-deep .card2 {
+    width: 100%;
   }
   #top .smallCards ::v-deep .smallCard2 {
     width: 100%;
@@ -410,16 +382,28 @@
   #top .smallCards ::v-deep .smallCard2 .bgImg {
     left: 12px;
     top: 12px;
-  }
-  #top .smallCards ::v-deep .smallCard2 .cover {
-    margin-right: 100px;
+    width: 100px;
   }
   #top .smallCards ::v-deep .smallCard2:last-child {
     margin-top: 10px;
   }
   #top .smallCards ::v-deep .smallCard2:last-child .cover {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    right: -99px;
+  }
+  #top .smallCards .card2:last-child ::v-deep .cover {
+    top: 86px;
+    left: -45px;
+    right: auto;
+    width: 650px;
+  }
+  #top .smallCards .card2:last-child ::v-deep .bgImg {
+    right: 40px;
+    top: 20px;
+    left: auto;
+    height: 99px;
+    width: auto;
   }
   #top .smallCards ::v-deep .smallCard {
     width: 100%;
