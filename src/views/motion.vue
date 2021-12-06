@@ -86,6 +86,18 @@ export default {
         },
         {
           src: require("../assets/article/motion/18.gif")
+        },
+        {
+          src: require("../assets/article/motion/19.gif")
+        },
+        {
+          src: require("../assets/article/motion/20.gif")
+        },
+        {
+          src: require("../assets/article/motion/21.gif")
+        },
+        {
+          src: require("../assets/article/motion/22.gif")
         }
       ]
     };
