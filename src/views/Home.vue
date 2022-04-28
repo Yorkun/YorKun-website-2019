@@ -237,7 +237,7 @@
               <a href="https://okjk.co/NaQpmM" target="_blank"></a>
               <a href="https://twitter.com/YorKun_c" target="_blank"></a>
               <a href="https://github.com/Yorkun" target="_blank"></a>
-              <!-- <a href="https://unsplash.com/@yorkun" target="_blank"></a> -->
+              <a href="https://www.oculus.com/deeplink/?action=view&path=%2Fprofile%2F103487554304308&utm_medium=share&utm_source=oculus" target="_blank"></a>
               <!-- <a href="https://www.behance.net/yorkun" target="_blank"></a> -->
             </div>
             <div class="contact-wrap">
@@ -1275,9 +1275,9 @@ export default {
                 background-image: url("../assets/index/links/github_icon.svg");
               }
 
-              // &:nth-of-type(6) {
-              //   background-image: url('../assets/index/links/behance_icon.svg');
-              // }
+              &:nth-of-type(10) {
+                background-image: url('../assets/index/links/mate_icon.svg');
+              }
             }
           }
 
