@@ -604,7 +604,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        profile: "Profile",
+        profile: "Links Page",
       },
       avatarCardCN: {
         title: " ",
@@ -618,7 +618,7 @@ export default {
         isWhiteBotton: false,
         isTag: false,
         bgImg: Portrait,
-        profile: "个人信息",
+        profile: "相关链接",
       },
       cards: cnDate,
       buttons: {

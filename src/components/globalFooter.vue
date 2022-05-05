@@ -1,9 +1,9 @@
 <template>
   <div class="globalFooter">
     <div class="globalFooter_links">
-      <span>Links:</span>
+      <!-- <span>Links:</span> -->
+      <a href="https://yorkun.bio.link/" target="_blank">My Links Page</a>
       <a href="https://figma.cool/" target="_blank">Figma.Cool</a>
-      <a href="https://look.yorkun.com/" target="_blank">Quick Look</a>
       <a href="https://yancymin.design" target="_blank">Yancy Min</a>
       <!-- <a href="https://cn.figma.cool" target="_blank">Figma 汉化插件</a> -->
       <!-- <a href="http://yorkunpic.lofter.com" target="_blank">
