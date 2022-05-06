@@ -231,7 +231,7 @@
               <a href="https://www.figma.com/@yorkun" target="_blank"></a>
               <a href="https://dribbble.com/yorkun" target="_blank"></a>
               <a href="http://yorkun.lofter.com/" target="_blank"></a>
-              <a href="https://design.yorkun.com/" target="_blank"></a>
+              <a href="https://yorkun.dribbble.com/" target="_blank"></a>
               <a href="https://weibo.com/chengyork" target="_blank"></a>
               <a href="https://www.instagram.com/yorkun_cheng/" target="_blank"></a>
               <a href="https://okjk.co/NaQpmM" target="_blank"></a>
