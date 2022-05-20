@@ -23,7 +23,7 @@ export default {
       bgImg: photoAlbum,
       cardColor: '#f5e6ca',
       isCenterImg: false,
-      link: 'http://yorkunpic.lofter.com/',
+      link: 'https://album.yorkun.com/',
     },
   ],
   en: [
