@@ -9,7 +9,7 @@
     
         {{footerLinkText}}
         <slot></slot>
-      </a>-->
+      </a>
     </div>
     <div
       class="globalFooter_copyright"
