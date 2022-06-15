@@ -264,7 +264,7 @@
                 <i></i>
                 <p>
                   <transition name="fade">
-                    <span v-if="weixin" key="weixin">yorkun-cheng</span>
+                    <span v-if="weixin" key="weixin">yorkun123</span>
                     <span v-else key="text2">{{
                       isEn ? "Show My WeChat" : "查看我的微信"
                     }}</span>
