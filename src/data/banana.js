@@ -31,7 +31,7 @@ export default {
       isWhiteBotton: true,
       isTag: true,
       bgImg: dingtong_banner,
-      hrefG: 'https://dingdong.framer.website/',
+      hrefD: 'https://dingdong.framer.website/',
     },
     {
       title: '小蕉 BANANA',
@@ -77,7 +77,7 @@ export default {
       isWhiteBotton: true,
       isTag: true,
       bgImg: dingtong_banner,
-      hrefG: 'https://dingdong.framer.website/',
+      hrefD: 'https://dingdong.framer.website/',
     },
     {
     title: '小蕉 BANANA',
