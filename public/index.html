@@ -1,86 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <title>YorKun 右可 ｜ Website</title>
-    <meta
-      name="keywords"
-      content="YorKun,右可,设计师,设计师右可,UI设计师,视觉设计师,动效设计师,程昱琨,设计,york,chengyork,yorkuncheng,designer,design,个人网站"
-    />
-    <meta
-      name="description"
-      content="Hey, this is YorKun. A UI designer and an animation enthusiast. Welcome to my website."
-    />
-    <script>
-      ;(function(d) {
-        var config = {  
-            kitId: 'nvx0jqz',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h = d.documentElement,
-          t = setTimeout(function() {
-            h.className =
-              h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive'
-          }, config.scriptTimeout),
-          tk = d.createElement('script'),
-          f = false,
-          s = d.getElementsByTagName('script')[0],
-          a
-        h.className += ' wf-loading'
-        tk.src = 'https://use.typekit.net/' + config.kitId + '.js'
-        tk.async = true
-        tk.onload = tk.onreadystatechange = function() {
-          a = this.readyState
-          if (f || (a && a != 'complete' && a != 'loaded')) return
-          f = true
-          clearTimeout(t)
-          try {
-            Typekit.load(config)
-          } catch (e) {}
-        }
-        s.parentNode.insertBefore(tk, s)
-      })(document)
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-110580357-1"
-    ></script>
-    <script src="https://unpkg.com/three@^0.131.0/build/three.min.js"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+  <title>YorKun 右可 ｜ Website</title>
+  <meta name="keywords"
+    content="YorKun,右可,设计师,设计师右可,UI设计师,视觉设计师,动效设计师,程昱琨,设计,york,chengyork,yorkuncheng,designer,design,个人网站" />
+  <meta name="description"
+    content="Hey, this is YorKun. A UI designer and an animation enthusiast. Welcome to my website." />
+  <script>
+    ; (function (d) {
+      var config = {
+        kitId: 'nvx0jqz',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement,
+        t = setTimeout(function () {
+          h.className =
+            h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive'
+        }, config.scriptTimeout),
+        tk = d.createElement('script'),
+        f = false,
+        s = d.getElementsByTagName('script')[0],
+        a
+      h.className += ' wf-loading'
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js'
+      tk.async = true
+      tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState
+        if (f || (a && a != 'complete' && a != 'loaded')) return
+        f = true
+        clearTimeout(t)
+        try {
+          Typekit.load(config)
+        } catch (e) { }
       }
-      gtag('js', new Date())
+      s.parentNode.insertBefore(tk, s)
+    })(document)
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110580357-1"></script>
+  <script src="https://unpkg.com/three@^0.131.0/build/three.min.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
 
-      gtag('config', 'UA-110580357-1')
-    </script>
-    <!-- 4.0验证码 -->
-    <script src="https://static.geetest.com/v4/gt4.js"></script>
+    gtag('config', 'UA-110580357-1')
+  </script>
+  <!-- 4.0验证码 -->
+  <script src="https://static.geetest.com/v4/gt4.js"></script>
 
-    <!-- Start of Howxm client code snippet -->
-<script>
-  function _howxm(){_howxmQueue.push(arguments)}
-  window._howxmQueue=window._howxmQueue||[];
-  _howxm('setAppID','3998a1b3-9fca-478e-920d-965bb6bec902');
-  (function(){var scriptId='howxm_script';
-  if(!document.getElementById(scriptId)){
-  var e=document.createElement('script'),
-  t=document.getElementsByTagName('script')[0];
-  e.setAttribute('id',scriptId);
-  e.type='text/javascript';e.async=!0;
-  e.src='https://static.howxm.com/sdk.js';
-  t.parentNode.insertBefore(e,t)}})();
+  <!-- Start of Howxm client code snippet -->
+  <script>
+    function _howxm() { _howxmQueue.push(arguments) }
+    window._howxmQueue = window._howxmQueue || [];
+    _howxm('setAppID', '3998a1b3-9fca-478e-920d-965bb6bec902');
+    (function () {
+      var scriptId = 'howxm_script';
+      if (!document.getElementById(scriptId)) {
+        var e = document.createElement('script'),
+          t = document.getElementsByTagName('script')[0];
+        e.setAttribute('id', scriptId);
+        e.type = 'text/javascript'; e.async = !0;
+        e.src = 'https://static.howxm.com/sdk.js';
+        t.parentNode.insertBefore(e, t)
+      }
+    })();
   </script>
   <!-- End of Howxm client code snippet -->
 
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
 </html>
