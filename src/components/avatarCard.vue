@@ -19,7 +19,7 @@
       <div class="img-area" :style="`background-image: url(${bgImg})`">
         <div class="avatar-content">
           <img src="../assets/index/avatar.png" alt="avatar" class="avatar" />
-          <a class="ghostButton" href="https://yorkun.bio.link/" target="_blank">
+          <a class="ghostButton" href="https://bento.me/yorkun" target="_blank">
             <div class="wrap">
               <span class="title">{{profile}}</span>
               <span class="link-icon"></span>
