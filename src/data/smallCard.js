@@ -9,11 +9,11 @@ export default {
       tag: '动效设计',
       cardColor: ' #FFA51D',
       footer: '',
-      isTag: false,
+      isTag: true,
       tagColor: 'rgba(0,0,0,0.08)',
       bgImg: animation,
       isCenterImg: false,
-      link: 'https://ykmg.framer.website'
+      link: '/motion',
     },
     {
       title: ' ',
@@ -33,11 +33,11 @@ export default {
       tag: 'Mograh',
       cardColor: ' #FFA51D',
       footer: '',
-      isTag: false,
+      isTag: true,
       tagColor: 'rgba(0,0,0,0.08)',
       bgImg: animation,
       isCenterImg: false,
-      link: 'https://ykmg.framer.website'
+      link: '/motion',
     },
     {
       title: ' ',
