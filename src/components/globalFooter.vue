@@ -2,7 +2,7 @@
   <div class="globalFooter">
     <div class="globalFooter_links">
       <!-- <span>Links:</span> -->
-      <a href="https://yorkun.bio.link/" target="_blank">Bio.Link</a>
+      <a href="https://bento.me/yorkun" target="_blank">Bento</a>
       <a href="https://figma.cool/" target="_blank">Figma.Cool</a>
       <a href="https://yancymin.design" target="_blank">Yancy Min</a>
       <!-- <a href="https://cn.figma.cool" target="_blank">Figma 汉化插件</a> -->
