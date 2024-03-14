@@ -876,7 +876,7 @@ export default {
         z-index: 111;
         position: absolute;
         opacity: 0;
-        animation: showLogo2 2.5s linear forwards;
+        animation: showLogo2 1s linear forwards;
         animation-delay: 0.6s;
         width: 160px;
         top: 148px;
