@@ -62,8 +62,8 @@ export default {
     }
 
     img {
-      width: 34px;
-      height: 22px;
+      width: 51px;
+      height: 26px;
     }
   }
 }

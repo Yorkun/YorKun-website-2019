@@ -834,8 +834,8 @@ export default {
           position: absolute;
           left: 0;
           display: block;
-          width: 34px;
-          height: 22px;
+          width: 51px;
+          height: 26px;
           background-image: url("../assets/index/small_logo.svg");
           background-size: cover;
           transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
