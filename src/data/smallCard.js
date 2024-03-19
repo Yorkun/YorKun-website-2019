@@ -7,7 +7,7 @@ export default {
     {
       title: '动效作品集',
       tag: '动效设计',
-      cardColor: ' #FFA51D',
+      cardColor: ' #FF9900',
       footer: '',
       isTag: true,
       tagColor: 'rgba(0,0,0,0.08)',
@@ -32,7 +32,7 @@ export default {
     {
       title: 'Motion Graphic',
       tag: 'Mograh',
-      cardColor: ' #FFA51D',
+      cardColor: ' #FF9900',
       footer: '',
       isTag: true,
       tagColor: 'rgba(0,0,0,0.08)',
