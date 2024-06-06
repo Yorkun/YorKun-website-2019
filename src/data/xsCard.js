@@ -23,7 +23,7 @@ export default {
       bgImg: photoAlbum,
       cardColor: '#f5e6ca',
       isCenterImg: false,
-      link: 'https://album.yorkun.com/',
+      link: 'https://album-yk.framer.website/',
     },
   ],
   en: [
@@ -46,7 +46,7 @@ export default {
       bgImg: photoAlbum,
       cardColor: '#f5e6ca',
       isCenterImg: false,
-      link: 'https://album.yorkun.com/',
+      link: 'https://album-yk.framer.website/',
     },
   ],
 };
