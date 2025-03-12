@@ -13,8 +13,8 @@ export default {
       tagColor: 'rgba(0,0,0,0.08)',
       bgImg: animation,
       isCenterImg: false,
-      link: '/motion',
-      // link: 'ykmg.framer.website',
+      // link: '/motion',
+      link: 'https://ykmg.framer.website/', 
     },
     {
       title: ' ',
@@ -38,8 +38,8 @@ export default {
       tagColor: 'rgba(0,0,0,0.08)',
       bgImg: animation,
       isCenterImg: false,
-      link: '/motion',
-      // link: 'ykmg.framer.website',
+      // link: '/motion',
+      link: 'https://ykmg.framer.website/', 
     },
     {
       title: ' ',
